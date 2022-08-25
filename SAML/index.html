@@ -1,0 +1,377 @@
+<html class="gr__richzhang_github_io"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script src="./The Unreasonable Effectiveness of Deep Networks as a Perceptual Metric_files/jsapi" type="text/javascript"></script>
+<script type="text/javascript">google.load("jquery", "1.3.2");</script>
+
+<style type="text/css">
+	body {
+		font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+		font-weight:300;
+		font-size:19px;
+		margin-left: auto;
+		margin-right: auto;
+		width: 1100px;
+	}
+	h1 {
+		font-weight:300;
+	}
+
+	.disclaimerbox {
+		background-color: #eee;
+		border: 1px solid #eeeeee;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+		padding: 20px;
+	}
+	
+	video.header-vid {
+		height: 140px;
+		border: 1px solid black;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+	}
+	
+	img.header-img {
+		height: 140px;
+		border: 1px solid black;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+	}
+	
+	img.rounded {
+		border: 0px solid #eeeeee;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+	}
+	
+	a:link,a:visited
+	{
+		color: #1367a7;
+		text-decoration: none;
+	}
+	a:hover {
+		color: #208799;
+	}
+	
+	td.dl-link {
+		height: 160px;
+		text-align: center;
+		font-size: 22px;
+	}
+	
+	.layered-paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+		box-shadow:
+		        0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+		        5px 5px 0 0px #fff, /* The second layer */
+		        5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+		        10px 10px 0 0px #fff, /* The third layer */
+		        10px 10px 1px 1px rgba(0,0,0,0.35), /* The third layer shadow */
+		        15px 15px 0 0px #fff, /* The fourth layer */
+		        15px 15px 1px 1px rgba(0,0,0,0.35), /* The fourth layer shadow */
+		        20px 20px 0 0px #fff, /* The fifth layer */
+		        20px 20px 1px 1px rgba(0,0,0,0.35), /* The fifth layer shadow */
+		        25px 25px 0 0px #fff, /* The fifth layer */
+		        25px 25px 1px 1px rgba(0,0,0,0.35); /* The fifth layer shadow */
+		margin-left: 10px;
+		margin-right: 45px;
+	}
+	
+	.paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+		box-shadow:
+		        0px 0px 1px 1px rgba(0,0,0,0.35); /* The top layer shadow */
+	
+		margin-left: 10px;
+		margin-right: 45px;
+	}
+	
+	.layered-paper { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+		box-shadow:
+		        0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+		        5px 5px 0 0px #fff, /* The second layer */
+		        5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+		        10px 10px 0 0px #fff, /* The third layer */
+		        10px 10px 1px 1px rgba(0,0,0,0.35); /* The third layer shadow */
+		margin-top: 5px;
+		margin-left: 10px;
+		margin-right: 30px;
+		margin-bottom: 5px;
+	}
+	
+	.vert-cent {
+		position: relative;
+	    top: 50%;
+	    transform: translateY(-50%);
+	}
+	
+	hr
+	{
+		border: 0;
+		height: 1px;
+		background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+	}
+</style>
+
+
+
+		<title>Multi-site Dataset for Prostate MRI Segmentation</title>
+		<meta property="og:image" content="https://yulequan.github.io//ec-net/figures/teaser_one_column_high.png">
+		<meta property="og:title" content="Patch-based Output Space Adversarial Learning for Joint Optic Disc and Cup Segmentation. In ***, 2018.">
+  </head>
+    <br>
+    <br>
+
+  <body data-gr-c-s-loaded="true">
+    <br>
+          <center>
+          	<span style="font-size:34px">A Multi-site Dataset for Prostate MRI Segmentation</span><br>
+    <br>
+	  		  
+	  		  <!-- <br> -->
+	
+<!-- 	  		  <table align="center" width="540px">
+	  			  <tbody><tr>
+	  	              <td align="center" width="180px">
+	  					<center>
+	  						<span style="font-size:22px"><a href="https://liuquande.github.io/">Quande Liu</a><sup></sup></span>
+		  		  		</center>
+		  		  	  </td>
+	  	              <td align="center" width="180px">
+	  					<center>
+	  						<span style="font-size:22px"><a href="http://www.cse.cuhk.edu.hk/~qdou/">Qi Dou</a><sup></sup></span>
+		  		  		</center>
+		  		  	  </td>
+	  	              <td align="center" width="180px">
+	  					<center>
+	  						<span style="font-size:22px"><a href="http://www.cse.cuhk.edu.hk/~pheng/">Pheng-Ann Heng</a><sup></sup></span>
+		  		  		</center>
+		  		  	  </td>
+	  			  </tr>
+			  </tbody></table>
+	  		   <br> -->
+			  <!--<table align="center" width="800px"><tbody>-->
+			  <!--<tr>-->
+	  	 <!--             <td align="center" width="50px"></td>-->
+	  	 <!--             <td align="center" width="400px">-->
+	  		<!--			<center>-->
+				          	<!-- <span style="font-size:18px"><sup></sup>The Chinese University of Hong Kong</span> -->
+		  	<!--	  		</center>-->
+	  	 <!--             <td align="center" width="50px"></td>-->
+			  <!--</tr>-->
+			  <!--</tbody></table>-->
+			  
+			  <!--<table align="center" width="800px"><tbody>-->
+			  
+			  <!--</tbody></table>-->
+	
+			  <!--<br>-->
+	
+	  		<!--  <table align="center" width="1100px">-->
+	  		<!--	  <tbody><tr>-->
+	  	 <!--             <td align="center" width="275px">-->
+	  		<!--			<center>-->
+				 <!--         	<span style="font-size:18px"></span>-->
+		  	<!--	  		</center>-->
+		  	<!--	  	  </td>-->
+	  	 <!--             <td align="center" width="225px">-->
+	  		<!--			<center>-->
+	  		<!--				<span style="font-size:22px">IEEE TMI 2019<a href="https://arxiv.org/abs/1902.07519"> [Paper]</a></span>-->
+		  	<!--	  		</center>-->
+		  	<!--	  	  </td>-->
+	  	 <!--             <td align="center" width="225px">-->
+	  		<!--			<center>-->
+	  		<!--				<span style="font-size:22px">Code <a href="https://github.com/EmmaW8/pOSAL"> [GitHub]</a></span>-->
+		  	<!--	  		</center>-->
+		  	<!--	  	  </td>-->
+	
+	  	 <!--             <td align="center" width="275px">-->
+	  		<!--			<center>-->
+				 <!--         	<span style="font-size:18px"></span>-->
+		  	<!--	  		</center>-->
+		  	<!--	  	  </td>-->
+			  <!--</tr></tbody></table>-->
+	      </center>
+	
+	   <!--   <br>-->
+  		<!--  <table align="center" width="1100px">-->
+  		<!--	  <tbody><tr>-->
+  	 <!--             <td width="400px">-->
+  		<!--			<center>-->
+  	 <!--               	<img class="rounded" src="figures/performance_drop.jpg" width="400px">-->
+  	 <!--               	<br>-->
+				<!--	</center>-->
+  	 <!--             </td>-->
+  	 <!--             </tr>-->
+  		  <br>
+  	 <!--             </tbody></table>-->
+		  <hr>
+
+  		  <br>
+		  <!-- <hr> -->
+
+  		  <!--<center><h1>Abstract</h1></center>-->
+         This is a well-organized multi-site dataset for prostate MRI segmentation, which contains prostate T2-weighted MRI data (with segmentation mask) collected from six different data sources out of three public datasets. It can support research in various problem settings with need of multi-site data, such as Domain Generalization, Multi-site Learning and Life-long Learning, etc.  
+		<br><br><hr>
+		<h3>(1) Details of data and imaging protocols</h3>
+		The details of sample number and imaging protocols in each site are summarized in the tabel below:
+  		    <table align="center" width="900px">
+  			<tbody>
+  			  	<tr>
+  			  		<td align="center"><img class="round" style="width:800px" src="figure/protocol.png"></td>	
+			  	</tr>
+			</tbody>
+			</table>
+         Among these data:
+         <ul>
+           <li>Samples of Site A,B are from  <a href="https://wiki.cancerimagingarchive.net/display/Public/NCI-ISBI+2013+Challenge+-+Automated+Segmentation+of+Prostate+Structures"> NCI-ISBI 2013</a> dataset [1].</li>
+           <li>Samples of Site C are from  <a href="https://i2cvb.github.io/"> Initiative  for  Collaborative  Computer  Vision  Benchmarking</a> (I2CVB) dataset [2].</li>
+           <li>Samples of Site D,E,F are from  <a href="https://promise12.grand-challenge.org/"> Prostate MR Image Segmentation 2012</a> (PROMISE12) dataset [3].</li>
+         </ul>
+		
+
+		<h3>(2) Visualization of sample slices <br></h3>
+		The appearance and contrast differences across the six sites can be displied in the figure below:
+		<br> 
+		<br> 
+		    <table align="center" width="900px">
+  			<tbody>
+  			  	<tr>
+  			  		<td align="center"><img class="round" style="width:900px" src="figure/sample_slice.png"></td>	
+			  	</tr>
+			</tbody>
+			</table>
+		<br> 
+
+		<h3>(3) Preprocessing steps <br></h3>
+		We frist convert data from all six sites uniformly to '.nii' format. For preprocessing, we center-cropped the images from Site C with roughly same view in axial plane as images from other sites (since the raw images of Site C are scanned from whole body rather than prostate surrounding area). After that, we resized all samples in the six sites to size of 384x384 in axial plane. 
+		<!-- This version is called <B>'Raw_nii'</B>. -->
+		
+<!-- 		<br> 
+		<br>
+
+		With the data from 'Raw_nii', we further clip each volume data in the six sites to only preserve slices of prostate region in z space, for the consistency of objective segmented region across domains. This version is called <B>'Clipped_nii'</B>.
+ -->
+  	<!--
+	We demonstrate the quality of our method by applying it to consolidate point sets and reconstruct surfaces. Our method produces consolidated point sets and improves the surface reconstruction quality, particularly on preserving the edges. -->
+
+  		<!-- <br><br> -->
+ <!--  		<table align="center" width="600px">
+			  <tbody><tr>
+				  <td><span style="font-size:24pt"><center>
+				  	<img class="paper-big" style="width:800px" src="figures/results.png">
+  	              </center></span></td>
+              </tr>
+  		</tbody></table>  -->
+
+
+
+  		  <h3>(4) Dataset Download Links</h3>
+			<span style="font-size:16px"><a href="https://drive.google.com/drive/folders/1GnDk2EgZbfFuve2iRO0QGdQykQrfxkfK?usp=sharing">[Processed_data_nii]</a> <br> <br> 
+				<!-- <span style="font-size:16px"><a href="https://drive.google.com/drive/folders/1uuGvcFescRfBDR-cnxRcLn0k0yebB3Fc?usp=sharing">[Clipped_nii]</a> -->
+
+
+		  <br>
+	
+<!-- 
+
+​		
+  		  <table align="center" width="1100px">
+  			<tbody>
+			<tr><td width="100px"><left>
+	  		<h2>Code of SAML</h2> 
+	  		The tensorflow implementation (version 1.12.0) can be <span style="font-size:16px"><a href="xxx">Download here</a>. -->
+<!--   			  	<tr>
+  			  		<td align="center"><img class="round" style="width:800px" src="figure/saml.png"></td>	
+			  	</tr>
+
+			</left></td></tr>
+			</tbody></table>
+			  	Overview of the shape-aware meta-learning scheme. The source domains are randomly split into meta-train and meta-test to simulate the domain shift. In meta-optimization: (1) we constrain the shape compactness in meta-test to encourage segmentations with complete shape; (2) we promote the intra-class cohesion and inter-class separation between the contour and background embeddings regardless of domains, to enhance domain-invariance for robust boundary delineation. -->
+		<!-- <br>
+  		<br>
+ -->
+  		  <table align="center" width="1100px">
+  			<tbody>
+			<tr><td width="100px"><left>
+	  		<h2>Citation</h2>
+	  		If this dataset is helpful for your research, please consider citing:
+	  		 <pre>
+			  <code>
+	@article{liu2020ms,
+			title={Ms-net: Multi-site network for improving prostate segmentation with heterogeneous mri data},
+			author={Liu, Quande and Dou, Qi and Yu, Lequan and Heng, Pheng Ann},
+			journal={IEEE Transactions on Medical Imaging},
+			year={2020},
+			publisher={IEEE}
+	}
+			  </code>
+	or
+			  <code>
+	@inproceedings{liu2020saml,
+			title={Shape-aware Meta-learning for Generalizing Prostate MRI Segmentation to Unseen Domains},
+			author={Liu, Quande and Dou, Qi and Heng, Pheng Ann},
+			booktitle={International Conference on Medical Image Computing and Computer Assisted Intervention (MICCAI)},
+			year={2020}
+	}
+			  </code>
+			</pre>
+			</left></td></tr>
+			</tbody></table>
+	<!-- 	  <hr> -->
+​		  
+  		  <table align="center" width="1100px">
+  			<tbody>
+			<tr><td width="400px"><left>
+	  		<h2>Acknowledgements</h2>
+	  		We sincerely thank the organizers and collaborators of NCI-ISBI13 Challenge [1], I2CVB dataset [2] and PROMISE12 Challenge [3] for sharing the data for public use. 
+	  		  <!-- We thank anonymous reviewers for the comments and suggestions. The work is supported by the Research Grants Council of the Hong Kong Special Administrative Region (Project no. GRF 14225616), the Shenzhen Science and Technology Program (No. JCYJ20170413162617606 and No. JCYJ20160429190300857), and the CUHK strategic recruitment fund.
+-->
+			</left></td></tr>
+			</tbody></table>
+
+		 
+		<br>
+		<br>
+ 		<!-- <hr> -->
+
+  		  <table align="center" width="1100px">
+  			<tbody>
+			<tr><td width="400px"><left>
+	  		<h2>Contact</h2>
+	  		For further question about the dataset, please contact Quande Liu (qdliu@cse.cuhk.edu.hk)
+	  		  <!-- We thank anonymous reviewers for the comments and suggestions. The work is supported by the Research Grants Council of the Hong Kong Special Administrative Region (Project no. GRF 14225616), the Shenzhen Science and Technology Program (No. JCYJ20170413162617606 and No. JCYJ20160429190300857), and the CUHK strategic recruitment fund.
+-->
+			</left></td></tr>
+			</tbody></table>
+		<br>
+		<br>
+
+  		  <table align="center" width="1100px">
+  			<tbody>
+			<tr><td width="400px"><left>
+	  		<h2>Reference</h2>
+           [1] Bloch, N., Madabhushi, A., Huisman, H., Freymann, J., et al.: NCI-ISBI 2013 Challenge: Automated Segmentation of Prostate Structures. (2015)
+           <br>[2] Lemaitre, G., Marti, R., Freixenet, J., Vilanova. J. C., et al.: Computer-Aided Detection and diagnosis for prostate cancer based on mono and multi-parametric MRI: A review. In: Computers in Biology and Medicine, vol. 60, pp. 8-31 (2015)
+           <br>[3] Litjens, G., Toth, R., Ven, W., Hoeks, C., et al.: Evaluation of prostate segmentation algorithms for mri: The promise12 challenge. In: Medical Image Analysis.
+, vol. 18, pp. 359-373 (2014)
+			</left></td></tr>
+			</tbody></table>
+		<br>
+		<br>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+<div id="footer">
+	<div id="footer-text"></div>
+</div>
+	<p><center>
+      	<div id="clustrmaps-widget" style="width:40%">
+		<script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=CSzIxZl-T7aE53Bq1mmlzOfJyB0IeZY7CzBYiCrtD3U&cl=ffffff&w=a"></script>
+	</div>  
+	
+</div>
+
+</body></html>

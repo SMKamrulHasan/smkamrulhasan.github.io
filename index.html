@@ -1230,8 +1230,202 @@ ga('send', 'pageview');
 	</tbody>
 </table> -->
 
+<!-- ===== Software Development (Soft Product Gallery) ===== -->
+<style>
+  .sw-wrap{
+    font-family: Aptos, Arial, sans-serif;
+    margin: 24px 0 40px;
+  }
+
+  .sw-title{
+    font-size: 28px;
+    font-weight: 850;
+    letter-spacing: -0.3px;
+    margin: 0 0 18px;
+    color:#111;
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom: 6px;
+  }
+
+  /* --- Product block --- */
+  .sw-item{
+    display:grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 30px;
+    margin: 34px 0;
+    padding: 26px;
+    border-radius: 22px;
+    background:
+      linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0.00)),
+      radial-gradient(1200px 300px at 0% 0%, rgba(0,0,0,0.03), transparent 55%);
+  }
+
+  .sw-item.reverse{
+    grid-template-columns: 0.8fr 1.2fr;
+  }
+
+  /* --- Text --- */
+  .sw-name{
+    font-size: 22px;
+    font-weight: 800;
+    margin: 0;
+    color:#111;
+    letter-spacing: -0.2px;
+  }
+
+  .sw-sub{
+    margin: 6px 0 14px;
+    font-size: 15px;
+    color:#666;
+  }
+
+  .sw-desc{
+    font-size: 15.5px;
+    line-height: 1.6;
+    color:#111;
+    margin-bottom: 14px;
+  }
+
+  .sw-link{
+    display:inline-block;
+    margin-top: 6px;
+    font-size: 14px;
+    color:#1f4bb8;
+    text-decoration:none;
+    font-weight: 600;
+  }
+  .sw-link:hover{ text-decoration: underline; }
+
+  /* --- Visuals --- */
+  .sw-visual{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap: 16px;
+  }
+
+  .sw-card{
+    background:#fff;
+    border-radius: 22px;
+    padding: 14px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.10);
+    transition: transform 220ms ease, box-shadow 220ms ease;
+  }
+
+  .sw-card:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 26px 55px rgba(0,0,0,0.14);
+  }
+
+  .sw-card img{
+    display:block;
+    width: 100%;
+    height:auto;
+    border-radius: 14px;
+  }
+
+  /* --- Tag strip --- */
+  .sw-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap: 10px;
+    margin-top: 16px;
+  }
+
+  .sw-tag{
+    font-size: 13px;
+    padding: 5px 12px;
+    border-radius: 999px;
+    background: rgba(0,0,0,0.05);
+    color:#333;
+  }
+
+  @media (max-width: 900px){
+    .sw-item,
+    .sw-item.reverse{
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<div class="sw-wrap">
+  <div class="sw-title">Software Development</div>
+
+  <!-- ===== NIFTI VIEWER ===== -->
+  <section class="sw-item">
+    <div>
+      <h3 class="sw-name">NiFTI File Viewer</h3>
+      <div class="sw-sub">macOS Compatible • Neuroimaging Utility</div>
+
+      <p class="sw-desc">
+        Designed and built a native macOS application to visualize
+        <b>NiFTI neuroimaging files</b>, enabling intuitive exploration of
+        volumetric medical data across coronal, sagittal, and axial planes.
+      </p>
+
+      <p class="sw-desc">
+        Focused on performance, usability, and clean rendering for research
+        workflows in medical imaging.
+      </p>
+
+      <a class="sw-link" href="#">Download Software →</a>
+
+      <div class="sw-tags">
+        <span class="sw-tag">macOS</span>
+        <span class="sw-tag">Medical Imaging</span>
+        <span class="sw-tag">NiFTI</span>
+        <span class="sw-tag">3D Visualization</span>
+      </div>
+    </div>
+
+    <div class="sw-visual">
+      <div class="sw-card" style="max-width:160px;">
+        <img src="./indexpics/nifti_logo.png" alt="NiFTI Viewer logo">
+      </div>
+      <div class="sw-card" style="max-width:260px;">
+        <img src="./indexpics/nifti_phone.png" alt="NiFTI Viewer UI">
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GENAI SUMMARIZER ===== -->
+  <section class="sw-item reverse">
+    <div class="sw-visual">
+      <div class="sw-card" style="max-width:360px;">
+        <img src="./indexpics/summary_ui.png" alt="GenAI Summarizer UI">
+      </div>
+    </div>
+
+    <div>
+      <h3 class="sw-name">GenAI Summarizer ChatBot</h3>
+      <div class="sw-sub">LLM • LangChain • Vector Search</div>
+
+      <p class="sw-desc">
+        Built a <b>GenAI-powered summarization chatbot</b> capable of extracting
+        concise, high-quality summaries from PDFs, DOCX, TXT files,
+        and Wikipedia articles.
+      </p>
+
+      <p class="sw-desc">
+        Uses embedding-based retrieval and context-aware prompting
+        to provide accurate, source-grounded responses.
+      </p>
+
+      <a class="sw-link" href="#">Download Software →</a>
+
+      <div class="sw-tags">
+        <span class="sw-tag">LangChain</span>
+        <span class="sw-tag">ChromaDB</span>
+        <span class="sw-tag">LLM</span>
+        <span class="sw-tag">RAG</span>
+        <span class="sw-tag">Embeddings</span>
+      </div>
+    </div>
+  </section>
+</div>
+<!-- ===== End Software Development ===== -->
 				 
-<h2 style="color: black;">Software Development</h2>
+<!-- <h2 style="color: black;">Software Development</h2>
 <ul>
     <img align="right" src="./indexpics/mobile.png" width="350px" class="right">
     <li style="padding-bottom:25px;color: black;">
@@ -1257,7 +1451,7 @@ ga('send', 'pageview');
         </ul>
         <br clear="both">
     </li>
-</ul>
+</ul> -->
 
 <h2 style="color: black;">Publications</h2>
 <table id="tbPublications" width="100%">

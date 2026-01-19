@@ -618,8 +618,82 @@ ga('send', 'pageview');
 <!-- ===== End Contributions section ===== -->
 
 
-<!-- ===== Education ===== -->
-<h2>Education</h2>
+<!-- ===== Start of Education ===== -->
+<!-- ===== Education Section ===== -->
+<style>
+  /* Section header (matches "Recent AI Contributions" style) */
+  .sec-head{
+    margin: 32px 0 18px 0;
+  }
+  .sec-title{
+    font-size: 44px;
+    font-weight: 900;
+    letter-spacing: -0.6px;
+    color: #111;
+    line-height: 1.05;
+  }
+  .sec-rule{
+    height: 2px;
+    background: rgba(0,0,0,0.35);
+    margin-top: 10px;
+  }
+
+  /* Education layout */
+  .edu-wrap{
+    margin-top: 18px;
+  }
+  .edu-item{
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 18px;
+    margin-bottom: 18px;
+    align-items: start;
+  }
+  .edu-year{
+    font-weight: 700;
+    font-size: 15px;
+    color: #555;
+    padding-top: 6px;
+  }
+  .edu-card{
+    border: 1px solid #e6e6e6;
+    border-radius: 14px;
+    padding: 14px 16px;
+    background: #fff;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+  }
+  .edu-degree{
+    font-size: 20px;
+    font-weight: 800;
+    color: #111;
+    margin-bottom: 4px;
+  }
+  .edu-school{
+    font-size: 15px;
+    font-weight: 600;
+    color: #2563eb;
+    margin-bottom: 2px;
+  }
+  .edu-location{
+    font-size: 14px;
+    color: #555;
+  }
+
+  /* Responsive */
+  @media (max-width: 760px){
+    .edu-item{
+      grid-template-columns: 1fr;
+    }
+    .edu-year{
+      padding-top: 0;
+    }
+  }
+</style>
+
+<div class="sec-head">
+  <div class="sec-title">Education</div>
+  <div class="sec-rule"></div>
+</div>
 
 <div class="edu-wrap">
 
@@ -642,7 +716,11 @@ ga('send', 'pageview');
   </div>
 
 </div>
+<!-- ===== End Education Section ===== -->
+
 	
+<!-- ===== End of Education ===== -->
+
 				
 <!-- ===== News (Timeline + Filters + Show More) ===== -->
 <style>

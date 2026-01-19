@@ -686,96 +686,165 @@ ga('send', 'pageview');
 
 
 <h2 style="color: black;">Professional Experience</h2>
-<ul>
-	<img align="right" src="./indexpics/Johnson-and-Johnson.jpeg" width="250px" class="right">
- 	<li style="padding-bottom:25px;color: black;">
-	<b> Johnson & Johnson  </b><br>
-	<a  style="color:gray"  > Senior AI Scientist (Leadership) </a> <br>
-	<a  style="color:gray"  > New Jersey </a> <br>
-	<a  style="color:gray"  > Feb 2023 - Present </a> <br>
-	<br>
-
 <style>
-  /* --- Experience bullet design (drop-in) --- */
-  .xp-block { margin: 10px 0 18px 0; }
-  .xp-section { margin: 14px 0 10px 0; }
-  .xp-title { font-weight: 700; margin: 0 0 6px 0; color: #111; }
-  .xp-list { margin: 0 0 0 18px; padding: 0; }
-  .xp-list li { margin: 6px 0; line-height: 1.5; }
+/* ===== Experience Card – Artistic ===== */
+.exp-card{
+  font-family: Aptos, Arial, sans-serif;
+  position: relative;
+  padding: 18px 22px 22px 22px;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+  border: 1px solid #e6e6e6;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  margin-bottom: 30px;
+}
 
-  .xp-tags { margin-top: 8px; }
-  .xp-tag {
-    display: inline-block;
-    padding: 3px 10px;
-    margin: 4px 6px 0 0;
-    border-radius: 999px;
-    font-size: 13px;
-    border: 1px solid #ddd;
-    background: #f7f7f7;
-    color: #222;
-    white-space: nowrap;
-  }
+/* left accent */
+.exp-card:before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  bottom:0;
+  width:5px;
+  border-radius: 18px 0 0 18px;
+  background: linear-gradient(180deg,#d61a1a,#ff7a7a);
+}
+
+/* header */
+.exp-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:20px;
+}
+.exp-meta b{ font-size:20px; }
+.exp-meta div{ color:#666; margin-top:2px; }
+
+.exp-logo img{
+  width:210px;
+  border-radius:12px;
+}
+
+/* sections */
+.exp-section{
+  margin-top:20px;
+  padding:14px 16px;
+  border-radius:14px;
+  background:#ffffff;
+  border:1px solid #efefef;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+.exp-section:hover{
+  transform: translateY(-2px);
+  box-shadow:0 6px 18px rgba(0,0,0,0.06);
+}
+
+.exp-title{
+  font-weight:800;
+  margin-bottom:8px;
+  font-size:17px;
+}
+
+/* bullets */
+.exp-list{
+  margin:0;
+  padding-left:18px;
+}
+.exp-list li{
+  margin:6px 0;
+  line-height:1.55;
+}
+
+/* tag system */
+.exp-tags{ margin-top:8px; }
+.tag{
+  display:inline-block;
+  padding:4px 12px;
+  margin:4px 6px 0 0;
+  border-radius:999px;
+  font-size:13px;
+  border:1px solid;
+}
+
+/* domain colors */
+.cv   { background:#f2f7ff; border-color:#c9dcff; color:#1f4bb8; }
+.agent{ background:#f8f5ff; border-color:#ded0ff; color:#5b2fbf; }
+.gen  { background:#fff5f5; border-color:#ffd2d2; color:#b91c1c; }
+
 </style>
 
-<div class="xp-block">
+<div class="exp-card">
 
-  <!-- 1) Computer Vision -->
-  <div class="xp-section">
-    <div class="xp-title">Deep Learning & AI — Computer Vision</div>
-    <ul class="xp-list">
+  <!-- Header -->
+  <div class="exp-header">
+    <div class="exp-meta">
+      <b>Johnson &amp; Johnson</b>
+      <div>Senior AI Scientist </div>
+      <div>New Jersey</div>
+      <div>Feb 2023 – Present</div>
+    </div>
+
+    <div class="exp-logo">
+      <img src="./indexpics/Johnson-and-Johnson.jpeg" alt="Johnson & Johnson">
+    </div>
+  </div>
+
+  <!-- Computer Vision -->
+  <div class="exp-section">
+    <div class="exp-title">Deep Learning &amp; AI — Computer Vision</div>
+    <ul class="exp-list">
       <li>Develop imaging AI foundations at the intersection of CV + DL infrastructure for multi-lesion lung cancer detection from 3D CT.</li>
       <li>Build semantic + instance segmentation pipelines and scale cohort-level dataset creation for late-stage detection.</li>
       <li>Design deep learning image-classification pipelines to stratify benign vs malignant cases.</li>
     </ul>
-    <div class="xp-tags">
-      <span class="xp-tag">3D CT</span>
-      <span class="xp-tag">Segmentation</span>
-      <span class="xp-tag">SAM / MedSAM</span>
-      <span class="xp-tag">Vision Transformers</span>
-      <span class="xp-tag">Self/Semi-Supervised</span>
+    <div class="exp-tags">
+      <span class="tag cv">3D CT</span>
+      <span class="tag cv">Segmentation</span>
+      <span class="tag cv">SAM / MedSAM</span>
+      <span class="tag cv">Vision Transformers</span>
+      <span class="tag cv">Self / Semi-Supervised</span>
     </div>
   </div>
 
-  <!-- 2) Agentic AI -->
-  <div class="xp-section">
-    <div class="xp-title">Agentic AI — Multi-Agent System</div>
-    <ul class="xp-list">
+  <!-- Agentic AI -->
+  <div class="exp-section">
+    <div class="exp-title">Agentic AI — Multi-Agent System</div>
+    <ul class="exp-list">
       <li>Built an agentic AI system using CrewAI for autonomous, multi-agent collaboration.</li>
       <li>Agents execute tasks via external APIs with structured communication and role specialization.</li>
-      <li>Planning + reasoning + memory enable adaptation based on context and prior outcomes.</li>
+      <li>Planning, reasoning, and memory enable adaptive behavior based on context and prior outcomes.</li>
     </ul>
-    <div class="xp-tags">
-      <span class="xp-tag">CrewAI</span>
-      <span class="xp-tag">Tool Use</span>
-      <span class="xp-tag">Planning</span>
-      <span class="xp-tag">Memory</span>
-      <span class="xp-tag">API Orchestration</span>
+    <div class="exp-tags">
+      <span class="tag agent">CrewAI</span>
+      <span class="tag agent">Tool Use</span>
+      <span class="tag agent">Planning</span>
+      <span class="tag agent">Memory</span>
+      <span class="tag agent">API Orchestration</span>
     </div>
   </div>
 
-  <!-- 3) GenAI / NLP -->
-  <div class="xp-section">
-    <div class="xp-title">Generative AI — NLP</div>
-    <ul class="xp-list">
-      <li>Conduct R&amp;D to improve LLM performance for text classification tasks.</li>
-      <li>Design and implement automation workflows using EMR/EHR/claims data.</li>
-      <li>Develop GenAI healthcare models leveraging foundation NLP architectures (e.g., BERT-family, GPT-family).</li>
-      <li>Capabilities: prompt engineering, full fine-tuning, PEFT, retrieval-augmented workflows.</li>
+  <!-- GenAI -->
+  <div class="exp-section">
+    <div class="exp-title">Generative AI — NLP</div>
+    <ul class="exp-list">
+      <li>Conduct R&amp;D to improve LLM performance for text-classification tasks.</li>
+      <li>Design and implement automation workflows using EMR / EHR / claims data.</li>
+      <li>Develop GenAI healthcare models leveraging foundation NLP architectures.</li>
+      <li>Capabilities include prompt engineering, full fine-tuning, PEFT, and retrieval-augmented workflows.</li>
     </ul>
-    <div class="xp-tags">
-      <span class="xp-tag">Prompt Engineering</span>
-      <span class="xp-tag">Fine-Tuning</span>
-      <span class="xp-tag">PEFT</span>
-      <span class="xp-tag">Vector DB</span>
-      <span class="xp-tag">HuggingFace</span>
-      <span class="xp-tag">LangChain</span>
-      <span class="xp-tag">OpenAI</span>
+    <div class="exp-tags">
+      <span class="tag gen">Prompt Engineering</span>
+      <span class="tag gen">Fine-Tuning</span>
+      <span class="tag gen">PEFT</span>
+      <span class="tag gen">Vector DB</span>
+      <span class="tag gen">HuggingFace</span>
+      <span class="tag gen">LangChain</span>
+      <span class="tag gen">OpenAI</span>
     </div>
   </div>
 
 </div>
-
-<br>
 
 										
 	<img align="right" src="./indexpics/philips.png" width="250px" class="right">

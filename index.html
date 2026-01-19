@@ -846,327 +846,91 @@ ga('send', 'pageview');
 
 </div>
 
-										
-<!-- ===== Experience (IBM.com / Carbon-inspired) ===== -->
-<style>
-  .xp-carbon{ font-family: Aptos, Arial, sans-serif; margin: 18px 0 34px; }
+<!-- ===== START Experience ===== -->
+<ul>
 
-  /* outer card */
-  .xp-card{
-    border: 1px solid #e0e0e0;
-    border-radius: 18px;
-    overflow: hidden;
-    background: #fff;
-  }
+  <!-- ================= PHILIPS ================= -->
+  <img align="right" src="./indexpics/philips.png" width="250px" class="right">
 
-  /* top brand banner (IBM-like) */
-  .xp-banner{
-    display: grid;
-    grid-template-columns: 1fr 360px;
-    gap: 18px;
-    padding: 18px 20px;
-    border-bottom: 1px solid #e0e0e0;
-    align-items: center;
-    background:
-      linear-gradient(90deg, rgba(0,0,0,0.04), rgba(0,0,0,0.00) 65%),
-      repeating-linear-gradient(135deg, rgba(0,0,0,0.025) 0 10px, rgba(0,0,0,0) 10px 22px);
-  }
+  <li style="padding-bottom:25px; color:black;">
+    <b>Philips Research</b><br>
 
-  .xp-company{
-    margin: 0;
-    font-size: 26px;
-    font-weight: 900;
-    letter-spacing: -0.3px;
-    color:#111;
-  }
+    <span style="color:gray;">AI Research Intern 2021</span><br>
+    <span style="color:gray;">Cambridge, Massachusetts</span><br>
+    <span style="color:gray;">Aug 2021 – Nov 2021</span><br><br>
 
-  .xp-meta{
-    margin-top: 6px;
-    color:#525252;
-    font-size: 15px;
-    line-height: 1.45;
-  }
+    <ul class="roman">
+      <li>
+        Designed an optimized (60 FPS) lung features detector to improve
+        <b>PHILIPS LUMIFY</b> handheld transducer
+      </li>
+      <li>
+        Demonstrated <b>38%</b> higher accuracy with <b>86%</b> fewer parameters
+        compared to the SSD detection model
+      </li>
+      <li>
+        Deployed a <b>0.3M</b> parameter model on Android OS for real-time inference
+      </li>
+      <li>
+        Delivered a semi-supervised feature detection system from scratch
+        for product development
+      </li>
+      <br>
+      <img src="./indexpics/lumify.webp" width="170px" class="center">
+      <img src="./indexpics/con.jpeg" width="170px" class="center">
+    </ul>
+  </li>
 
-  /* big logo block (always visible) */
-  .xp-logoBox{
-    display:flex;
-    justify-content:flex-end;
-    align-items:center;
-  }
-  .xp-logoBox img{
-    height: 22px;             /* <- BIG */
-    width: auto;
-    display:block;
-    background:#fff;
-    padding: 10px 14px;
-    border-radius: 14px;
-    border: 1px solid #e0e0e0;
-    box-shadow: 0 10px 24px rgba(0,0,0,0.08);
-  }
+  <!-- ================= IBM ================= -->
+  <img align="right" src="./indexpics/ibm.png" width="320px" class="right">
 
-  /* content grid (Carbon-ish) */
-  .xp-body{
-    display: grid;
-    grid-template-columns: 1.05fr 0.95fr;
-    gap: 18px;
-    padding: 18px 20px 20px 20px;
-  }
+  <li style="padding-bottom:25px; color:black;">
+    <b>IBM Research</b><br>
 
-  .xp-blockTitle{
-    margin: 0 0 10px 0;
-    font-size: 15px;
-    font-weight: 800;
-    color:#111;
-    letter-spacing: 0.2px;
-    text-transform: uppercase;
-  }
+    <span style="color:gray;">Machine Learning Research Intern 2020</span><br>
+    <span style="color:gray;">San Jose, California</span><br>
+    <span style="color:gray;">Aug 2020 – Nov 2020</span><br><br>
 
-  .xp-list{
-    margin: 0;
-    padding-left: 18px;
-  }
-  .xp-list li{
-    margin: 9px 0;
-    line-height: 1.6;
-    color:#111;
-    font-size: 16px;
-  }
+    <ul class="roman">
+      <li>
+        <b>[Project 1]</b> Prototype an explainable AutoML repository of subnetworks
+        based on similarity and ranking algorithms achieving
+        <b>82.9%</b> fewer parameters and <b>28×</b> higher accuracy than baseline
+      </li>
+      <li>
+        <b>[Project 2]</b> Restructured channel-wise pruning of transfer-learning
+        convolutional layers, achieving up to <b>99.5%</b> parameter pruning
+        and <b>95.4%</b> FLOPs reduction
+      </li>
+      <li>
+        Scripted <b>1,500+</b> lines of code and delivered the project on time
+      </li>
+      <br>
+      <img src="./indexpics/IBM1.png" width="170px" class="center">
+      <img src="./indexpics/IBM2.jpeg" width="170px" class="center">
+    </ul>
+  </li>
 
-  /* tag row — Carbon “pill” but cleaner */
-  .xp-tags{
-    margin-top: 14px;
-    display:flex;
-    flex-wrap:wrap;
-    gap: 10px;
-  }
-  .xp-tag{
-    display:inline-flex;
-    align-items:center;
-    gap: 8px;
-    padding: 7px 12px;
-    border-radius: 999px;
-    font-size: 13.5px;
-    border: 1px solid #e0e0e0;
-    background: #f4f4f4;
-    color:#161616;
-    user-select:none;
-  }
-  .xp-dot{ width: 8px; height: 8px; border-radius: 50%; background:#0f62fe; }
+  <!-- ================= OXFORD ================= -->
+  <img align="right" src="./indexpics/OXF.png" width="90px" class="right">
 
-  /* media gallery */
-  .xp-mediaGrid{
-    display:grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-  }
-  .xp-media{
-    border-radius: 16px;
-    overflow:hidden;
-    border: 1px solid #e0e0e0;
-    background:#f4f4f4;
-    box-shadow: 0 14px 28px rgba(0,0,0,0.08);
-    transition: transform 160ms ease, box-shadow 160ms ease;
-    cursor: zoom-in;
-  }
-  .xp-media:hover{
-    transform: translateY(-2px);
-    box-shadow: 0 20px 38px rgba(0,0,0,0.12);
-  }
-  .xp-media img{ width:100%; height:auto; display:block; }
+  <li style="padding-bottom:25px; color:black;">
+    <b>University of Oxford</b><br>
 
-  /* accent themes per company */
-  .theme-philips .xp-dot{ background:#0f62fe; } /* Philips-ish blue */
-  .theme-ibm .xp-dot{ background:#111; }       /* IBM black */
-  .theme-oxford .xp-dot{ background:#0a2f7a; } /* Oxford navy */
+    <span style="color:gray;">Machine Learning Summer School 2022</span><br>
+    <span style="color:gray;">Oxford, United Kingdom</span><br>
+    <span style="color:gray;">Jun 2022 – Aug 2022</span><br><br>
 
-  /* modal zoom */
-  .xp-modal{
-    position: fixed; inset: 0;
-    background: rgba(0,0,0,0.62);
-    display:none; align-items:center; justify-content:center;
-    padding: 22px;
-    z-index: 9999;
-  }
-  .xp-modal.show{ display:flex; }
-  .xp-modalInner{
-    max-width: min(1100px, 94vw);
-    max-height: 88vh;
-    border-radius: 18px;
-    overflow:hidden;
-    background:#fff;
-    box-shadow: 0 24px 80px rgba(0,0,0,0.35);
-  }
-  .xp-modalInner img{ width:100%; height:auto; display:block; }
+    <ul class="roman">
+      <li>
+        Statistical Learning • Markov Decision Theory •
+        Self-supervised Learning (<b>Top 5%</b>)
+      </li>
+    </ul>
+  </li>
 
-  @media (max-width: 980px){
-    .xp-banner{ grid-template-columns: 1fr; }
-    .xp-logoBox{ justify-content:flex-start; }
-    .xp-logoBox img{ height: 74px; }
-    .xp-body{ grid-template-columns: 1fr; }
-  }
-</style>
+</ul>
 
-<!-- ===== PHILIPS ===== -->
-<div class="xp-carbon theme-philips">
-  <div class="xp-card">
-
-    <div class="xp-banner">
-      <div>
-        <h3 class="xp-company">Philips Research</h3>
-        <div class="xp-meta">AI Research Intern</div>
-		<div>Cambridge, Massachusetts</div>
-		<br>Aug 2021 – Nov 2021</div>
-      </div>
-      <div class="xp-logoBox">
-        <img src="./indexpics/philips.png" alt="Philips logo">
-      </div>
-    </div>
-
-    <div class="xp-body">
-      <div>
-        <div class="xp-blockTitle">Impact</div>
-        <ul class="xp-list">
-          <li>Designed an optimized <b>(60 FPS)</b> lung-features detector for <b>PHILIPS LUMIFY</b> handheld transducer.</li>
-          <li>Achieved <b>38%</b> higher accuracy with <b>86%</b> fewer parameters vs SSD detection baseline.</li>
-          <li>Deployed a <b>0.3M</b> parameter model on Android for real-time inference.</li>
-          <li>Delivered a semi-supervised feature detection system from scratch for product development.</li>
-        </ul>
-
-        <div class="xp-tags">
-          <span class="xp-tag"><span class="xp-dot"></span>Ultrasound</span>
-          <span class="xp-tag"><span class="xp-dot"></span>Real-time</span>
-          <span class="xp-tag"><span class="xp-dot"></span>Mobile Deployment</span>
-          <span class="xp-tag"><span class="xp-dot"></span>Object Detection</span>
-          <span class="xp-tag"><span class="xp-dot"></span>Semi-supervised</span>
-        </div>
-      </div>
-
-      <div>
-        <div class="xp-blockTitle">Selected Visuals</div>
-        <div class="xp-mediaGrid">
-          <div class="xp-media"><img src="./indexpics/lumify.webp" alt="Lumify" data-xpzoom></div>
-          <div class="xp-media"><img src="./indexpics/con.jpeg" alt="Detection output" data-xpzoom></div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-<!-- ===== IBM ===== -->
-<div class="xp-carbon theme-ibm">
-  <div class="xp-card">
-
-    <div class="xp-banner">
-      <div>
-        <h3 class="xp-company">IBM Research</h3>
-        <div class="xp-meta">Machine Learning Research Intern</div>
-		<div>San Jose, California</div>
-		<br>Aug 2020 – Nov 2020</div>
-      </div>
-      <div class="xp-logoBox">
-        <img src="./indexpics/ibm.png" alt="IBM logo">
-      </div>
-    </div>
-
-    <div class="xp-body">
-      <div>
-        <div class="xp-blockTitle">Impact</div>
-        <ul class="xp-list">
-          <li><b>[Project 1]</b> Built an explainable AutoML subnetwork repository using similarity + ranking: <b>82.9%</b> fewer parameters and <b>28×</b> more accurate than baseline.</li>
-          <li><b>[Project 2]</b> Channel-wise pruning of transfer-learning conv layers: up to <b>99.5%</b> parameter pruning and <b>95.4%</b> FLOPs reduction.</li>
-          <li>Delivered <b>1,500+</b> lines of code and shipped the project on time.</li>
-        </ul>
-
-        <div class="xp-tags">
-          <span class="xp-tag"><span class="xp-dot"></span>Explainable AutoML</span>
-          <span class="xp-tag"><span class="xp-dot"></span>Pruning</span>
-          <span class="xp-tag"><span class="xp-dot"></span>Efficiency</span>
-          <span class="xp-tag"><span class="xp-dot"></span>Transfer Learning</span>
-        </div>
-      </div>
-
-      <div>
-        <div class="xp-blockTitle">Selected Visuals</div>
-        <div class="xp-mediaGrid">
-          <div class="xp-media"><img src="./indexpics/IBM1.png" alt="IBM fig 1" data-xpzoom></div>
-          <div class="xp-media"><img src="./indexpics/IBM2.jpeg" alt="IBM fig 2" data-xpzoom></div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-<div class="xp-carbon theme-oxford">
-  <div class="xp-card">
-    <div class="xp-banner">
-      <div>
-        <h3 class="xp-company">University of Oxford</h3>
-        <div class="xp-meta">Machine Learning Summer School</div>
-		<div>Oxford, UK</div>
-		<br>Jun 2022 – Aug 2022</div>
-      </div>
-      <div class="xp-logoBox">
-        <img src="./indexpics/OXF.png" alt="Oxford logo">
-      </div>
-    </div>
-
-    <div class="xp-body">
-      <div>
-        <div class="xp-blockTitle">Focus</div>
-        <ul class="xp-list">
-          <li>Statistical Learning • Markov Decision Theory • Self-supervised Learning (<b>Top 5%</b>).</li>
-        </ul>
-        <div class="xp-tags">
-          <span class="xp-tag"><span class="xp-dot"></span>Statistics</span>
-          <span class="xp-tag"><span class="xp-dot"></span>MDP</span>
-          <span class="xp-tag"><span class="xp-dot"></span>Self-supervised</span>
-          <span class="xp-tag"><span class="xp-dot"></span>Top 5%</span>
-        </div>
-      </div>
-      <div></div>
-    </div>
-  </div>
-</div>
-
-<!-- Zoom modal -->
-<div class="xp-modal" id="xpModal" aria-hidden="true">
-  <div class="xp-modalInner">
-    <img id="xpModalImg" src="" alt="Zoomed image">
-  </div>
-</div>
-
-<script>
-(function(){
-  const modal = document.getElementById("xpModal");
-  const modalImg = document.getElementById("xpModalImg");
-
-  document.querySelectorAll("img[data-xpzoom]").forEach(img => {
-    img.addEventListener("click", () => {
-      modalImg.src = img.getAttribute("src");
-      modal.classList.add("show");
-      modal.setAttribute("aria-hidden","false");
-    });
-  });
-
-  modal.addEventListener("click", (e) => {
-    if(e.target === modal){
-      modal.classList.remove("show");
-      modal.setAttribute("aria-hidden","true");
-      modalImg.src = "";
-    }
-  });
-
-  document.addEventListener("keydown", (e) => {
-    if(e.key === "Escape" && modal.classList.contains("show")){
-      modal.classList.remove("show");
-      modal.setAttribute("aria-hidden","true");
-      modalImg.src = "";
-    }
-  });
-})();
-</script>
 <!-- ===== End Experience ===== -->
 
 

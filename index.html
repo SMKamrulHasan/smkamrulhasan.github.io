@@ -847,342 +847,344 @@ ga('send', 'pageview');
 </div>
 
 										
-<!-- ===== Experience Cards (Philips / IBM / Oxford) ===== -->
+<!-- ===== Experience (Soft • Gorgeous • Watercolor Glass) ===== -->
 <style>
-  /* Shared */
-  .exp-wrap{ font-family: Aptos, Arial, sans-serif; margin: 8px 0 24px; }
-  .exp-card{
-    --accent:#111;
-    border: 1px solid #e7e7e7;
-    border-radius: 16px;
-    background: #fff;
-    box-shadow: 0 10px 26px rgba(0,0,0,0.06);
+  .exp-soft-wrap{
+    font-family: Aptos, Arial, sans-serif;
+    margin: 14px 0 30px 0;
+  }
+
+  /* A soft watercolor background behind each role */
+  .exp-soft{
+    position: relative;
+    padding: 18px 18px 14px 18px;
+    border-radius: 22px;
+    margin: 16px 0;
     overflow: hidden;
-    margin: 14px 0;
+    background: rgba(255,255,255,0.72);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 14px 40px rgba(0,0,0,0.06);
+    border: 1px solid rgba(255,255,255,0.55);
   }
+
+  /* Watercolor blobs (soft, artistic, not “card-y”) */
+  .exp-soft::before,
+  .exp-soft::after{
+    content:"";
+    position:absolute;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    filter: blur(28px);
+    opacity: 0.55;
+    z-index: 0;
+  }
+
+  /* per-company accent blobs */
+  .exp-philips::before{ background: radial-gradient(circle at 30% 30%, rgba(33, 102, 255,0.45), transparent 55%); left:-180px; top:-220px; }
+  .exp-philips::after { background: radial-gradient(circle at 70% 40%, rgba(80, 170, 255,0.30), transparent 58%); right:-220px; top:-240px; }
+
+  .exp-ibm::before{ background: radial-gradient(circle at 30% 30%, rgba(0,0,0,0.35), transparent 55%); left:-190px; top:-230px; }
+  .exp-ibm::after { background: radial-gradient(circle at 70% 40%, rgba(120,120,120,0.25), transparent 58%); right:-230px; top:-250px; }
+
+  .exp-oxford::before{ background: radial-gradient(circle at 30% 30%, rgba(10,47,122,0.35), transparent 55%); left:-190px; top:-230px; }
+  .exp-oxford::after { background: radial-gradient(circle at 70% 40%, rgba(80,140,255,0.18), transparent 60%); right:-230px; top:-260px; }
+
+  /* content should be above blobs */
+  .exp-soft > *{ position: relative; z-index: 1; }
+
+  /* top row */
   .exp-top{
-    display:grid;
-    grid-template-columns: 1fr auto;
-    gap: 16px;
-    padding: 16px 16px 12px 16px;
-    background:
-      radial-gradient(900px 240px at 20% 0%, rgba(0,0,0,0.03), transparent 55%),
-      linear-gradient(180deg, rgba(0,0,0,0.02), transparent 70%);
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap: 18px;
   }
+
+  .exp-left{
+    min-width: 240px;
+  }
+
   .exp-company{
-    font-weight: 850;
-    font-size: 18px;
-    color: #111;
-    margin: 0 0 4px 0;
+    font-size: 20px;
+    font-weight: 900;
+    margin: 0;
     letter-spacing: -0.2px;
+    color:#111;
   }
-  .exp-meta{ margin:0; color:#666; font-size: 14px; line-height: 1.5; }
-  .exp-meta b{ color:#111; font-weight: 700; }
+
+  .exp-meta{
+    margin-top: 6px;
+    color:#666;
+    line-height: 1.55;
+    font-size: 14px;
+  }
+
+  /* logos — back to your original sizes */
+  .logo-philips{ width: 250px; height:auto; }
+  .logo-ibm{ width: 320px; height:auto; }
+  .logo-oxford{ width: 90px; height:auto; }
 
   .exp-logo{
-    width: 170px;
-    max-width: 38vw;
-    height: auto;
-    border-radius: 12px;
-    border: 1px solid #ececec;
-    background:#fff;
-    padding: 10px;
+    border-radius: 14px;
+    padding: 10px 12px;
+    background: rgba(255,255,255,0.55);
+    border: 1px solid rgba(255,255,255,0.7);
+    box-shadow: 0 12px 26px rgba(0,0,0,0.05);
   }
 
-  .exp-body{
-    padding: 0 16px 14px 16px;
+  /* elegant divider */
+  .exp-divider{
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(0,0,0,0.12), transparent);
+    margin: 14px 0 12px 0;
   }
 
-  /* Section titles with accent */
-  .exp-section-title{
-    display:flex;
-    align-items:center;
-    gap: 10px;
-    margin: 12px 0 8px 0;
-    font-weight: 800;
+  /* bullets */
+  .exp-bullets{
+    margin: 0;
+    padding-left: 18px;
+  }
+  .exp-bullets li{
+    margin: 7px 0;
+    line-height: 1.6;
     color:#111;
-    letter-spacing: -0.2px;
-  }
-  .exp-section-title::before{
-    content:"";
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: var(--accent);
-    box-shadow: 0 0 0 4px rgba(0,0,0,0.05);
   }
 
-  /* Bullets */
-  .exp-bullets{ margin: 0 0 8px 18px; padding:0; }
-  .exp-bullets li{ margin: 6px 0; line-height: 1.55; color:#111; }
-  .exp-bullets li::marker{ color: var(--accent); }
-
-  /* Tags */
-  .exp-tags{ display:flex; flex-wrap:wrap; gap: 8px; margin-top: 10px; }
-  .exp-tag{
+  /* soft "chips" (not outlined pills) */
+  .chip-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap: 8px;
+    margin-top: 12px;
+  }
+  .soft-chip{
     display:inline-flex;
     align-items:center;
-    gap: 6px;
-    padding: 5px 10px;
+    gap: 8px;
+    padding: 6px 12px;
     border-radius: 999px;
-    border: 1px solid #e3e3e3;
-    background: #f7f7f7;
+    background: rgba(255,255,255,0.55);
+    border: 1px solid rgba(255,255,255,0.65);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.7);
+    font-size: 13px;
     color:#222;
-    font-size: 13px;
-    white-space: nowrap;
   }
-  .exp-tag .dot{
-    width: 7px; height: 7px; border-radius: 50%;
-    background: var(--accent);
+  .soft-chip .mini{
+    width: 8px; height: 8px; border-radius: 50%;
+  }
+  .mini-blue{ background:#2166ff; }
+  .mini-black{ background:#111; }
+  .mini-navy{ background:#0a2f7a; }
+
+  /* hover: gentle lift */
+  .exp-soft{
+    transition: transform 160ms ease, box-shadow 160ms ease;
+  }
+  .exp-soft:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 18px 52px rgba(0,0,0,0.08);
   }
 
-  /* Gallery */
-  .exp-gallery{
+  /* image strip */
+  .exp-strip{
     display:flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin-top: 12px;
+    gap: 12px;
+    flex-wrap:wrap;
+    margin-top: 14px;
   }
-  .exp-thumb{
+  .strip-img{
     width: 170px;
-    max-width: 44vw;
-    border-radius: 12px;
-    border: 1px solid #ececec;
-    overflow: hidden;
-    background: #fff;
+    max-width: 45vw;
+    border-radius: 14px;
+    overflow:hidden;
+    box-shadow: 0 14px 30px rgba(0,0,0,0.08);
+    border: 1px solid rgba(255,255,255,0.7);
     cursor: zoom-in;
-    box-shadow: 0 8px 18px rgba(0,0,0,0.06);
-    transition: transform 140ms ease, box-shadow 140ms ease;
+    transition: transform 150ms ease;
   }
-  .exp-thumb:hover{ transform: translateY(-2px); box-shadow: 0 12px 24px rgba(0,0,0,0.08); }
-  .exp-thumb img{ display:block; width:100%; height:auto; }
+  .strip-img:hover{ transform: translateY(-2px) scale(1.01); }
+  .strip-img img{ width:100%; height:auto; display:block; }
 
-  /* Collapsible details */
-  .exp-actions{
-    display:flex;
-    gap: 10px;
-    margin-top: 12px;
-  }
-  .exp-btn{
-    border: 1px solid #e3e3e3;
-    background: #fff;
-    padding: 8px 12px;
-    border-radius: 12px;
-    font-family: inherit;
-    font-size: 13px;
-    cursor:pointer;
-    color:#111;
-  }
-  .exp-btn:hover{ background:#f7f7f7; }
-  .exp-details{
-    margin-top: 10px;
-    border-top: 1px solid #efefef;
-    padding-top: 12px;
-    display:none;
-  }
-  .exp-details.show{ display:block; }
-
-  /* Modal (image zoom) */
-  .exp-modal{
+  /* modal zoom */
+  .soft-modal{
     position: fixed;
     inset: 0;
     background: rgba(0,0,0,0.55);
     display:none;
     align-items:center;
     justify-content:center;
-    padding: 20px;
+    padding: 22px;
     z-index: 9999;
   }
-  .exp-modal.show{ display:flex; }
-  .exp-modal-inner{
-    max-width: min(980px, 92vw);
+  .soft-modal.show{ display:flex; }
+  .soft-modal-inner{
+    max-width: min(1100px, 92vw);
     max-height: 86vh;
-    border-radius: 16px;
+    border-radius: 18px;
     overflow:hidden;
-    background:#fff;
-    border: 1px solid rgba(255,255,255,0.25);
-    box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+    background: #fff;
+    box-shadow: 0 22px 70px rgba(0,0,0,0.35);
   }
-  .exp-modal-inner img{
-    display:block;
-    width:100%;
-    height:auto;
-  }
+  .soft-modal-inner img{ width:100%; height:auto; display:block; }
 
-  @media (max-width: 760px){
-    .exp-top{ grid-template-columns: 1fr; }
-    .exp-logo{ width: 200px; }
+  @media (max-width: 780px){
+    .exp-top{ flex-direction: column; align-items:flex-start; }
+    .exp-logo{ padding: 8px 10px; }
+    .logo-ibm{ width: 260px; }
+    .logo-philips{ width: 210px; }
   }
 </style>
 
-<div class="exp-wrap">
+<div class="exp-soft-wrap">
 
   <!-- ===== Philips ===== -->
-  <section class="exp-card" style="--accent:#0b5ed7;">
+  <div class="exp-soft exp-philips">
     <div class="exp-top">
-      <div>
+      <div class="exp-left">
         <h3 class="exp-company">Philips Research</h3>
-        <p class="exp-meta">
-          <b>AI Research Intern</b> • Cambridge, Massachusetts<br/>
+        <div class="exp-meta">
+          AI Research Intern • Cambridge, Massachusetts<br/>
           Aug 2021 – Nov 2021
-        </p>
-      </div>
-      <img class="exp-logo" src="./indexpics/philips.png" alt="Philips logo">
-    </div>
-
-    <div class="exp-body">
-      <div class="exp-section-title">Highlights</div>
-      <ul class="exp-bullets">
-        <li>Designed an optimized <b>(60 FPS)</b> lung-features detector to improve <b>PHILIPS LUMIFY</b> handheld transducer.</li>
-        <li>Demonstrated <b>38%</b> more accuracy with <b>86%</b> fewer parameters vs SSD detection model.</li>
-        <li>Deployed the framework <b>(0.3M)</b> on Android for real-time inference.</li>
-        <li>Delivered a semi-supervised feature-detection system from scratch for product development.</li>
-      </ul>
-
-      <div class="exp-tags">
-        <span class="exp-tag"><span class="dot"></span>Ultrasound</span>
-        <span class="exp-tag"><span class="dot"></span>Real-time</span>
-        <span class="exp-tag"><span class="dot"></span>Mobile Deployment</span>
-        <span class="exp-tag"><span class="dot"></span>Detector</span>
-        <span class="exp-tag"><span class="dot"></span>Semi-supervised</span>
-      </div>
-
-      <div class="exp-actions">
-        <button class="exp-btn" data-toggle="philips">Show details</button>
-      </div>
-
-      <div class="exp-details" id="philips">
-        <div class="exp-section-title">Project visuals</div>
-        <div class="exp-gallery">
-          <div class="exp-thumb"><img src="./indexpics/lumify.webp" alt="Lumify" data-zoom></div>
-          <div class="exp-thumb"><img src="./indexpics/con.jpeg" alt="Example output" data-zoom></div>
         </div>
       </div>
+
+      <div class="exp-logo">
+        <img class="logo-philips" src="./indexpics/philips.png" alt="Philips logo">
+      </div>
     </div>
-  </section>
+
+    <div class="exp-divider"></div>
+
+    <ul class="exp-bullets">
+      <li>Designed an optimized <b>(60 FPS)</b> lung-features detector for <b>PHILIPS LUMIFY</b> handheld transducer.</li>
+      <li>Achieved <b>38%</b> higher accuracy with <b>86%</b> fewer parameters vs SSD detection baseline.</li>
+      <li>Deployed a <b>0.3M</b> parameter model on Android for real-time inference.</li>
+      <li>Delivered a semi-supervised feature detection system from scratch for product development.</li>
+    </ul>
+
+    <div class="chip-row">
+      <span class="soft-chip"><span class="mini mini-blue"></span>Ultrasound</span>
+      <span class="soft-chip"><span class="mini mini-blue"></span>Real-time</span>
+      <span class="soft-chip"><span class="mini mini-blue"></span>Mobile Deployment</span>
+      <span class="soft-chip"><span class="mini mini-blue"></span>Object Detection</span>
+      <span class="soft-chip"><span class="mini mini-blue"></span>Semi-supervised</span>
+    </div>
+
+    <div class="exp-strip">
+      <div class="strip-img"><img src="./indexpics/lumify.webp" alt="Lumify" data-softzoom></div>
+      <div class="strip-img"><img src="./indexpics/con.jpeg" alt="Output" data-softzoom></div>
+    </div>
+  </div>
 
   <!-- ===== IBM ===== -->
-  <section class="exp-card" style="--accent:#111;">
+  <div class="exp-soft exp-ibm">
     <div class="exp-top">
-      <div>
+      <div class="exp-left">
         <h3 class="exp-company">IBM Research</h3>
-        <p class="exp-meta">
-          <b>Machine Learning Research Intern</b> • San Jose, California<br/>
+        <div class="exp-meta">
+          Machine Learning Research Intern • San Jose, California<br/>
           Aug 2020 – Nov 2020
-        </p>
-      </div>
-      <img class="exp-logo" src="./indexpics/ibm.png" alt="IBM logo">
-    </div>
-
-    <div class="exp-body">
-      <div class="exp-section-title">Highlights</div>
-      <ul class="exp-bullets">
-        <li><b>[Project 1]</b> Prototyped an explainable AutoML repository of subnetworks using similarity + ranking: <b>82.9%</b> fewer parameters and <b>28×</b> more accurate than baseline.</li>
-        <li><b>[Project 2]</b> Restructured channel-wise pruning in transfer-learning conv layers: up to <b>99.5%</b> parameter pruning and <b>95.4%</b> FLOPs reduction.</li>
-        <li>Scripted <b>1,500+</b> lines of code and delivered projects on time.</li>
-      </ul>
-
-      <div class="exp-tags">
-        <span class="exp-tag"><span class="dot"></span>Explainable AutoML</span>
-        <span class="exp-tag"><span class="dot"></span>Pruning</span>
-        <span class="exp-tag"><span class="dot"></span>Transfer Learning</span>
-        <span class="exp-tag"><span class="dot"></span>Efficiency</span>
-      </div>
-
-      <div class="exp-actions">
-        <button class="exp-btn" data-toggle="ibm">Show details</button>
-      </div>
-
-      <div class="exp-details" id="ibm">
-        <div class="exp-section-title">Project visuals</div>
-        <div class="exp-gallery">
-          <div class="exp-thumb"><img src="./indexpics/IBM1.png" alt="IBM figure 1" data-zoom></div>
-          <div class="exp-thumb"><img src="./indexpics/IBM2.jpeg" alt="IBM figure 2" data-zoom></div>
         </div>
       </div>
+
+      <div class="exp-logo">
+        <img class="logo-ibm" src="./indexpics/ibm.png" alt="IBM logo">
+      </div>
     </div>
-  </section>
+
+    <div class="exp-divider"></div>
+
+    <ul class="exp-bullets">
+      <li><b>[Project 1]</b> Built an explainable AutoML repository of subnetworks using similarity + ranking: <b>82.9%</b> fewer parameters and <b>28×</b> more accurate than baseline.</li>
+      <li><b>[Project 2]</b> Channel-wise pruning of transfer-learning conv layers: up to <b>99.5%</b> parameter pruning and <b>95.4%</b> FLOPs reduction.</li>
+      <li>Delivered <b>1,500+</b> lines of code and shipped the project on time.</li>
+    </ul>
+
+    <div class="chip-row">
+      <span class="soft-chip"><span class="mini mini-black"></span>Explainable AutoML</span>
+      <span class="soft-chip"><span class="mini mini-black"></span>Pruning</span>
+      <span class="soft-chip"><span class="mini mini-black"></span>Efficiency</span>
+      <span class="soft-chip"><span class="mini mini-black"></span>Transfer Learning</span>
+    </div>
+
+    <div class="exp-strip">
+      <div class="strip-img"><img src="./indexpics/IBM1.png" alt="IBM fig 1" data-softzoom></div>
+      <div class="strip-img"><img src="./indexpics/IBM2.jpeg" alt="IBM fig 2" data-softzoom></div>
+    </div>
+  </div>
 
   <!-- ===== Oxford ===== -->
-  <section class="exp-card" style="--accent:#0a2f7a;">
+  <div class="exp-soft exp-oxford">
     <div class="exp-top">
-      <div>
+      <div class="exp-left">
         <h3 class="exp-company">University of Oxford</h3>
-        <p class="exp-meta">
-          <b>Machine Learning Summer School</b> • Oxford, United Kingdom<br/>
+        <div class="exp-meta">
+          Machine Learning Summer School • Oxford, United Kingdom<br/>
           Jun 2022 – Aug 2022
-        </p>
+        </div>
       </div>
-      <img class="exp-logo" src="./indexpics/OXF.png" alt="Oxford logo">
-    </div>
 
-    <div class="exp-body">
-      <div class="exp-section-title">Focus</div>
-      <ul class="exp-bullets">
-        <li>Statistical Learning • Markov Decision Theory • Self-supervised Learning (<b>Top 5%</b>)</li>
-      </ul>
-
-      <div class="exp-tags">
-        <span class="exp-tag"><span class="dot"></span>Stats</span>
-        <span class="exp-tag"><span class="dot"></span>MDP</span>
-        <span class="exp-tag"><span class="dot"></span>Self-supervised</span>
-        <span class="exp-tag"><span class="dot"></span>Top 5%</span>
+      <div class="exp-logo">
+        <img class="logo-oxford" src="./indexpics/OXF.png" alt="Oxford logo">
       </div>
     </div>
-  </section>
+
+    <div class="exp-divider"></div>
+
+    <ul class="exp-bullets">
+      <li>Statistical Learning • Markov Decision Theory • Self-supervised Learning (<b>Top 5%</b>).</li>
+    </ul>
+
+    <div class="chip-row">
+      <span class="soft-chip"><span class="mini mini-navy"></span>Statistics</span>
+      <span class="soft-chip"><span class="mini mini-navy"></span>MDP</span>
+      <span class="soft-chip"><span class="mini mini-navy"></span>Self-supervised</span>
+      <span class="soft-chip"><span class="mini mini-navy"></span>Top 5%</span>
+    </div>
+  </div>
 
 </div>
 
-<!-- Modal for zoom -->
-<div class="exp-modal" id="expModal" aria-hidden="true">
-  <div class="exp-modal-inner">
-    <img id="expModalImg" src="" alt="Zoomed image">
+<!-- Zoom modal -->
+<div class="soft-modal" id="softModal" aria-hidden="true">
+  <div class="soft-modal-inner">
+    <img id="softModalImg" src="" alt="Zoomed image">
   </div>
 </div>
 
 <script>
 (function(){
-  // Collapsible details
-  document.querySelectorAll('[data-toggle]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const id = btn.getAttribute('data-toggle');
-      const el = document.getElementById(id);
-      const isOpen = el.classList.toggle('show');
-      btn.textContent = isOpen ? 'Show less' : 'Show details';
+  const modal = document.getElementById("softModal");
+  const modalImg = document.getElementById("softModalImg");
+
+  document.querySelectorAll("img[data-softzoom]").forEach(img => {
+    img.addEventListener("click", () => {
+      modalImg.src = img.getAttribute("src");
+      modal.classList.add("show");
+      modal.setAttribute("aria-hidden","false");
     });
   });
 
-  // Image zoom modal
-  const modal = document.getElementById('expModal');
-  const modalImg = document.getElementById('expModalImg');
-
-  document.querySelectorAll('img[data-zoom]').forEach(img => {
-    img.addEventListener('click', () => {
-      modalImg.src = img.getAttribute('src');
-      modal.classList.add('show');
-      modal.setAttribute('aria-hidden', 'false');
-    });
-  });
-
-  modal.addEventListener('click', (e) => {
-    // click outside image closes
-    if (e.target === modal) {
-      modal.classList.remove('show');
-      modal.setAttribute('aria-hidden', 'true');
-      modalImg.src = '';
+  modal.addEventListener("click", (e) => {
+    if(e.target === modal){
+      modal.classList.remove("show");
+      modal.setAttribute("aria-hidden","true");
+      modalImg.src = "";
     }
   });
 
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal.classList.contains('show')) {
-      modal.classList.remove('show');
-      modal.setAttribute('aria-hidden', 'true');
-      modalImg.src = '';
+  document.addEventListener("keydown", (e) => {
+    if(e.key === "Escape" && modal.classList.contains("show")){
+      modal.classList.remove("show");
+      modal.setAttribute("aria-hidden","true");
+      modalImg.src = "";
     }
   });
 })();
 </script>
-<!-- ===== End Experience Cards ===== -->
+<!-- ===== End Experience ===== -->
 
 
 	<img align="right" src="./indexpics/rit.png" width="320px" class="right">

@@ -348,7 +348,7 @@ ga('send', 'pageview');
   }
 
   /* filter chips */
-  .news-filters{ margin: 10px 0 12px 0; }
+  .news-filters{ margin: 10px 0 10px 0; }
   .chip{
     display:inline-block;
     padding: 6px 12px;
@@ -374,15 +374,15 @@ ga('send', 'pageview');
   .t-item{
     display:grid;
     grid-template-columns: 92px 18px 1fr;
-    gap: 12px;
-    padding: 10px 6px;
+    gap: 10px;
+    padding: 4px 6px;          /* tighter spacing */
     border-radius: 10px;
   }
   .t-item:hover{ background: #fafafa; }
 
   .t-date{
     font-weight: 700;
-    color:#1f4bb8; /* link-ish blue */
+    color:#1f4bb8;
     white-space: nowrap;
     font-size: 14px;
   }
@@ -395,29 +395,29 @@ ga('send', 'pageview');
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background: #FD6C6C; /* your coral accent */
-    margin-top: 4px;
+    background: #FD6C6C;
+    margin-top: 2px;           /* tighter */
   }
   .t-line{
     position:absolute;
-    top: 18px;
-    bottom: -12px;
+    top: 16px;
+    bottom: -6px;              /* tighter */
     width: 2px;
     background: #eee;
   }
 
   .t-text{
-    line-height: 1.5;
+    line-height: 1.45;
     color:#111;
   }
   .t-text a{ color:#1f4bb8; text-decoration:none; }
   .t-text a:hover{ text-decoration:underline; }
 
-  /* show more button */
+  /* actions */
   .news-actions{
     display:flex;
     gap: 10px;
-    margin-top: 12px;
+    margin-top: 10px;
   }
   .news-btn{
     border: 1px solid #ddd;
@@ -430,7 +430,7 @@ ga('send', 'pageview');
   }
   .news-btn:hover{ background:#f7f7f7; }
 
-  /* hidden items */
+  /* hidden items (default collapsed list) */
   .is-hidden{ display:none; }
 
   @media (max-width: 700px){
@@ -458,7 +458,7 @@ ga('send', 'pageview');
 
     <ul class="timeline" id="newsTimeline">
 
-      <!-- Visible by default (top ~6) -->
+      <!-- Visible by default -->
       <li class="t-item" data-year="2024">
         <div class="t-date">Jan 2024</div>
         <div class="t-dotcol"><span class="t-dot"></span><span class="t-line"></span></div>
@@ -495,7 +495,7 @@ ga('send', 'pageview');
         <div class="t-text">Successfully passed my <b>Ph.D. Candidacy Exam</b>.</div>
       </li>
 
-      <!-- Hidden initially (Show More reveals) -->
+      <!-- Hidden initially (Show more reveals in All view) -->
       <li class="t-item is-hidden" data-year="2021">
         <div class="t-date">Oct 2021</div>
         <div class="t-dotcol"><span class="t-dot"></span><span class="t-line"></span></div>
@@ -508,15 +508,16 @@ ga('send', 'pageview');
         <div class="t-date">Aug 2021</div>
         <div class="t-dotcol"><span class="t-dot"></span><span class="t-line"></span></div>
         <div class="t-text">
-          Started research internship at
-          <a href="https://www.philips.com/a-w/research/locations/cambridge-north-america.html" target="_blank">Philips Research North America</a>, Cambridge, MA.
+          Started Research Internship at
+          <a href="https://www.philips.com/a-w/research/locations/cambridge-north-america.html" target="_blank">Philips</a>,
+          Research North America, Cambridge, MA, USA.
         </div>
       </li>
 
       <li class="t-item is-hidden" data-year="2021">
         <div class="t-date">May 2021</div>
         <div class="t-dotcol"><span class="t-dot"></span><span class="t-line"></span></div>
-        <div class="t-text">Accepted to <b>UCL MedICSS</b>, London.</div>
+        <div class="t-text">Got accepted to UCL Medical Image Computing Summer School (MedICSS), London.</div>
       </li>
 
       <li class="t-item is-hidden" data-year="2021">
@@ -524,7 +525,7 @@ ga('send', 'pageview');
         <div class="t-dotcol"><span class="t-dot"></span><span class="t-line"></span></div>
         <div class="t-text">
           Accepted offer as AI Research Intern at
-          <a href="https://www.usa.philips.com/" target="_blank">Philips Research</a>, Cambridge, MA.
+          <a href="https://www.usa.philips.com/" target="_blank">Philips Research</a>, Cambridge, Massachusetts.
         </div>
       </li>
 
@@ -538,21 +539,24 @@ ga('send', 'pageview');
         <div class="t-date">Oct 2020</div>
         <div class="t-dotcol"><span class="t-dot"></span><span class="t-line"></span></div>
         <div class="t-text">
-          Paper accepted at <a href="https://spie.org/conferences-and-exhibitions/medical-imaging?SSO=1" target="_blank">SPIE 2021</a>, San Diego.
+          Paper got accepted at
+          <a href="https://spie.org/conferences-and-exhibitions/medical-imaging?SSO=1" target="_blank">SPIE 2021</a>,
+          San Diego, California.
         </div>
       </li>
 
       <li class="t-item is-hidden" data-year="2020">
         <div class="t-date">Aug 2020</div>
         <div class="t-dotcol"><span class="t-dot"></span><span class="t-line"></span></div>
-        <div class="t-text">Received <b>MICCAI Student Award</b> as part of NSF grant.</div>
+        <div class="t-text">Received <b>MICCAI Student Award</b> as a part of NSF grant.</div>
       </li>
 
       <li class="t-item is-hidden" data-year="2020">
         <div class="t-date">Aug 2020</div>
         <div class="t-dotcol"><span class="t-dot"></span><span class="t-line"></span></div>
         <div class="t-text">
-          Started research internship at <a href="https://www.research.ibm.com/" target="_blank">IBM Almaden Research Center</a>, San Jose, CA.
+          Started Research Internship at
+          <a href="https://www.research.ibm.com/" target="_blank">IBM</a>, Almaden Research Center, San Jose, California.
         </div>
       </li>
 
@@ -560,26 +564,27 @@ ga('send', 'pageview');
         <div class="t-date">May 2020</div>
         <div class="t-dotcol"><span class="t-dot"></span><span class="t-line"></span></div>
         <div class="t-text">
-          Accepted offer as Research Intern at <a href="https://www.ibm.com/us-en/" target="_blank">IBM</a>, San Jose, CA.
+          Accepted offer as Research Intern at
+          <a href="https://www.ibm.com/us-en/" target="_blank">IBM</a>, San Jose, California.
         </div>
       </li>
 
       <li class="t-item is-hidden" data-year="2020">
         <div class="t-date">Apr 2020</div>
         <div class="t-dotcol"><span class="t-dot"></span><span class="t-line"></span></div>
-        <div class="t-text">Presented paper at <b>ISBI 2020</b>.</div>
+        <div class="t-text">Presented paper at ISBI 2020.</div>
       </li>
 
       <li class="t-item is-hidden" data-year="2020">
         <div class="t-date">Feb 2020</div>
         <div class="t-dotcol"><span class="t-dot"></span><span class="t-line"></span></div>
-        <div class="t-text">Reviewer for <b>MICCAI 2020</b>.</div>
+        <div class="t-text">Reviewer for MICCAI 2020.</div>
       </li>
 
       <li class="t-item is-hidden" data-year="2019">
         <div class="t-date">Nov 2019</div>
         <div class="t-dotcol"><span class="t-dot"></span><span class="t-line"></span></div>
-        <div class="t-text">U-NetPlus paper accepted for oral presentation at <b>RIT Graduate Showcase 2019</b>.</div>
+        <div class="t-text">U-NetPlus paper accepted for oral presentation at RIT Graduate Showcase 2019.</div>
       </li>
 
     </ul>
@@ -599,25 +604,30 @@ ga('send', 'pageview');
   const toggleBtn = document.getElementById("toggleMoreBtn");
   const resetBtn  = document.getElementById("clearFilterBtn");
 
-  let showAll = false;
-  let yearFilter = "all";
+  let showAll = false;      // show hidden items in "All"
+  let yearFilter = "all";   // selected year
 
   function apply(){
-    // if showing less, hide items marked is-hidden; if showAll, reveal them
     items.forEach(li => {
       const y = li.getAttribute("data-year");
       const hiddenByDefault = li.classList.contains("is-hidden");
 
-      // year filter logic
       const passYear = (yearFilter === "all") || (y === yearFilter);
 
-      // showMore logic
-      const passMore = showAll ? true : !hiddenByDefault;
+      // ✅ Key fix:
+      // If a specific year is selected, show those items even if is-hidden.
+      const passMore = (yearFilter !== "all") ? true : (showAll ? true : !hiddenByDefault);
 
       li.style.display = (passYear && passMore) ? "" : "none";
     });
 
-    toggleBtn.textContent = showAll ? "Show less" : "Show more";
+    // Hide show-more button when filtering by a year (not needed)
+    if(yearFilter !== "all"){
+      toggleBtn.style.display = "none";
+    }else{
+      toggleBtn.style.display = "";
+      toggleBtn.textContent = showAll ? "Show less" : "Show more";
+    }
   }
 
   chips.forEach(chip => {

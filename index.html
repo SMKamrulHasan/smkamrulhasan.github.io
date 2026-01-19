@@ -220,7 +220,7 @@ ga('send', 'pageview');
 <!-- <h2 style="color: black;">About Me</h2>
 <p style="padding-bottom:30px;text-align:justify; font-family:Aptos, Arial, sans-serif;">
 
-	I finished my PhD from <a href="https://www.cis.rit.edu/" > Chester F. Carlson Center for Imaging Science</a> at Rochester Institute of Technology (RIT), Rochester, NY under the direction of my advisor, <a href="https://www.rit.edu/directory/calbme-cristian-linte" >Dr. Cristian Linte</a> and funded by both <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1808530&HistoricalAwards=false" >NSF</a> and NIH grants. My PhD Thesis was titled “From Fully-Supervised Single-Task to Semi-Supervised Multi-Task Deep Learning Architectures for Segmentation in Medical Imaging Applications”. I worked as an AI Research Intern at Philips Research in Cambridge, Massachusetts where I designed an extremely optimized object detection framework for object detection of COVID-19 features in ultrasound images (Ultrasound scans of the lung image) captured by Lumify portable Ultrasound probe. I worked for IBM Research in California as a Machine Learning Research Intern, where I've worked on deep neural network pruning/optimization for better explainable AI.
+	I’m a Senior AI Scientist at Johnson & Johnson. I have 8+ years of experience designing and deploying scalable, high-impact AI solutions in computer vision, multi-modal learning, and foundation models. I specialize in self-supervised learning, model compression, and multi-modal AI, driving state-of-the-art advancements in medical imaging and AI-powered drug discovery. I finished my PhD from <a href="https://www.cis.rit.edu/" > Chester F. Carlson Center for Imaging Science</a> at Rochester Institute of Technology (RIT), Rochester, NY under the direction of my advisor, <a href="https://www.rit.edu/directory/calbme-cristian-linte" >Dr. Cristian Linte</a> and funded by both <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1808530&HistoricalAwards=false" >NSF</a> and NIH grants. My PhD Thesis was titled “From Fully-Supervised Single-Task to Semi-Supervised Multi-Task Deep Learning Architectures for Segmentation in Medical Imaging Applications”. I worked as an AI Research Intern at Philips Research in Cambridge, Massachusetts where I designed an extremely optimized object detection framework for object detection of COVID-19 features in ultrasound images (Ultrasound scans of the lung image) captured by Lumify portable Ultrasound probe. I worked for IBM Research in California as a Machine Learning Research Intern, where I've worked on deep neural network pruning/optimization for better explainable AI.
 	</p>	
 <h2 style="color: black;">Research Interests </h2>
 <p style="padding-bottom:30px;text-align:justify" style="font-family:sans-serif">My research focuses broadly on developing and optimizing machine learning models for analyzing multi-modal images to enable more accurate automatic semantic and instance segmentation, 4D deformable registration, object detection, video object motion estimation, out-of-distribution (uncertainty) estimation, as well as video inpainting. I have profound knowledge of optimized label-efficient machine learning-based imaging problems. I have strong hands-on expertise in semi-/self-/un-supervised learning, representation learning, deep generative models, probabilistic Bayesian Monte Carlo models, and posterior estimation models.
@@ -445,6 +445,124 @@ ga('send', 'pageview');
   })();
 </script>
 <!-- ===== End section ===== -->
+
+
+<!-- ===== Recent AI Contributions + Selected Contributions ===== -->
+<style>
+  .contrib-wrap{
+    margin: 10px 0 30px 0;
+  }
+  .contrib-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    align-items: start;
+  }
+  .contrib-card{
+    border: 1px solid #e6e6e6;
+    border-radius: 14px;
+    padding: 16px 16px 14px 16px;
+    background: #fff;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+  }
+  .contrib-title{
+    margin: 0 0 8px 0;
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -0.2px;
+    color: #111;
+  }
+  .contrib-sub{
+    margin: 0 0 12px 0;
+    font-size: 15px;
+    color: #444;
+    line-height: 1.55;
+  }
+  .contrib-list{
+    margin: 0;
+    padding-left: 18px;
+  }
+  .contrib-list li{
+    margin: 10px 0;
+    line-height: 1.5;
+    color: #111;
+  }
+
+  /* “soft highlight” callouts */
+  .callout{
+    margin-top: 12px;
+    padding: 12px 12px;
+    border-radius: 12px;
+    border: 1px dashed #e6e6e6;
+    background: rgba(253,108,108,0.06);
+  }
+  .callout b{ color:#111; }
+  .muted{ color:#666; }
+
+  /* emoji headline */
+  .mini-head{
+    font-size: 16px;
+    font-weight: 800;
+    margin: 0 0 10px 0;
+    color: #111;
+  }
+
+  @media (max-width: 860px){
+    .contrib-grid{ grid-template-columns: 1fr; }
+  }
+</style>
+
+<div class="contrib-wrap">
+  <div class="contrib-grid">
+
+    <!-- Left: Recent AI Contributions -->
+    <div class="contrib-card">
+      <h2 class="contrib-title">Recent AI Contributions</h2>
+      <ul class="contrib-list">
+        <li>
+          <b>Vision Transformers for Lung Cancer Detection</b> — Developed and deployed transformer-based imaging models at J&amp;J to improve lung cancer detection performance and streamline clinical decision workflows.
+        </li>
+        <li>
+          <b>LLM-powered Drug Discovery Insights</b> — Built NLP pipelines (BERT/GPT-style) to analyze multi-channel biomedical text and signals, improving discovery of high-signal insights for downstream decision-making.
+        </li>
+      </ul>
+
+      <div class="callout">
+        <b>What I optimize for:</b>
+        <span class="muted">reliability, measurable lift, and deployability (not just prototypes).</span>
+      </div>
+    </div>
+
+    <!-- Right: Selected Contributions -->
+    <div class="contrib-card">
+      <h2 class="contrib-title">Selected Contributions</h2>
+
+      <div class="mini-head">🎓 STAMP</div>
+      <p class="contrib-sub">
+        Developed a self-training student–teacher framework for precise medical image segmentation.
+        <span class="muted">Conceptually aligned with modern self-training / distillation patterns in current reasoning and alignment-era models.</span>
+      </p>
+
+      <div class="mini-head">🧠 CondenseUNet</div>
+      <p class="contrib-sub">
+        Engineered model compression, pruning, and distillation methods to reduce model footprint while preserving clinical-grade performance.
+        <span class="muted">Designed for efficient inference under real deployment constraints.</span>
+      </p>
+
+      <div class="mini-head">✨ Surgical Occlusion Inpainting</div>
+      <p class="contrib-sub" style="margin-bottom:0;">
+        Built vision-based inpainting to remove laparoscopic tool occlusions from surgical video sequences.
+        <span class="muted">An early example of content-aware removal ideas later popularized in consumer imaging.</span>
+      </p>
+    </div>
+
+  </div>
+</div>
+<!-- ===== End Recent AI Contributions ===== -->
+
+
+
+				
 <!-- ===== News (Timeline + Filters + Show More) ===== -->
 <style>
   .news-wrap{

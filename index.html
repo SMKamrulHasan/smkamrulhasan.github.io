@@ -84,14 +84,235 @@ ga('send', 'pageview');
 </table>
 
 <!--<h2>Biography [<a href="./CV-JinYueming.pdf">CV</a>]</h2>-->
-<h2 style="color: black;">About Me</h2>
+<!-- <h2 style="color: black;">About Me</h2>
 <p style="padding-bottom:30px;text-align:justify; font-family:Aptos, Arial, sans-serif;">
 
 	I finished my PhD from <a href="https://www.cis.rit.edu/" > Chester F. Carlson Center for Imaging Science</a> at Rochester Institute of Technology (RIT), Rochester, NY under the direction of my advisor, <a href="https://www.rit.edu/directory/calbme-cristian-linte" >Dr. Cristian Linte</a> and funded by both <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1808530&HistoricalAwards=false" >NSF</a> and NIH grants. My PhD Thesis was titled “From Fully-Supervised Single-Task to Semi-Supervised Multi-Task Deep Learning Architectures for Segmentation in Medical Imaging Applications”. I worked as an AI Research Intern at Philips Research in Cambridge, Massachusetts where I designed an extremely optimized object detection framework for object detection of COVID-19 features in ultrasound images (Ultrasound scans of the lung image) captured by Lumify portable Ultrasound probe. I worked for IBM Research in California as a Machine Learning Research Intern, where I've worked on deep neural network pruning/optimization for better explainable AI.
 	</p>	
 <h2 style="color: black;">Research Interests </h2>
 <p style="padding-bottom:30px;text-align:justify" style="font-family:sans-serif">My research focuses broadly on developing and optimizing machine learning models for analyzing multi-modal images to enable more accurate automatic semantic and instance segmentation, 4D deformable registration, object detection, video object motion estimation, out-of-distribution (uncertainty) estimation, as well as video inpainting. I have profound knowledge of optimized label-efficient machine learning-based imaging problems. I have strong hands-on expertise in semi-/self-/un-supervised learning, representation learning, deep generative models, probabilistic Bayesian Monte Carlo models, and posterior estimation models.
-	
+	 -->
+
+<!-- ===== About + Research Interests (Modern + Interactive) ===== -->
+<style>
+  .about-wrap{
+    font-family: Aptos, Arial, sans-serif;
+    margin: 10px 0 30px 0;
+  }
+
+  .about-grid{
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 18px;
+    align-items: start;
+  }
+
+  /* Card */
+  .about-card{
+    border: 1px solid #e6e6e6;
+    border-radius: 14px;
+    padding: 16px 16px 14px 16px;
+    background: #fff;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+  }
+
+  .about-title{
+    margin: 0 0 8px 0;
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -0.2px;
+    color: #111;
+  }
+
+  .about-sub{
+    margin: 0 0 14px 0;
+    font-size: 15px;
+    color: #444;
+    line-height: 1.55;
+  }
+
+  .about-sub a{ text-decoration: none; }
+  .about-sub a:hover{ text-decoration: underline; }
+
+  /* Pills */
+  .pill-row{ margin: 10px 0 0 0; }
+  .pill{
+    display: inline-block;
+    padding: 6px 12px;
+    margin: 6px 8px 0 0;
+    border-radius: 999px;
+    border: 1px solid #ddd;
+    background: #f7f7f7;
+    font-size: 13px;
+    color: #222;
+    cursor: pointer;
+    user-select: none;
+    transition: transform 120ms ease, background 120ms ease, border 120ms ease;
+  }
+  .pill:hover{ transform: translateY(-1px); }
+  .pill.active{
+    background: #111;
+    color: #fff;
+    border-color: #111;
+  }
+
+  /* Highlights inside text when pills active */
+  .hl{
+    padding: 0 4px;
+    border-radius: 6px;
+    background: rgba(253, 108, 108, 0.22); /* your coral-ish theme */
+  }
+
+  /* Details (expand/collapse) */
+  details.about-details{
+    margin-top: 12px;
+    border-top: 1px dashed #e6e6e6;
+    padding-top: 10px;
+  }
+  details.about-details summary{
+    cursor: pointer;
+    font-weight: 700;
+    color: #111;
+    list-style: none;
+  }
+  details.about-details summary::-webkit-details-marker{ display: none; }
+  details.about-details summary:before{
+    content: "➕ ";
+    font-weight: 700;
+  }
+  details.about-details[open] summary:before{
+    content: "➖ ";
+  }
+
+  /* Right column “Profile” */
+  .mini-title{
+    font-size: 16px;
+    font-weight: 800;
+    margin: 0 0 10px 0;
+    color: #111;
+  }
+  .mini-list{
+    margin: 0;
+    padding-left: 18px;
+  }
+  .mini-list li{
+    margin: 8px 0;
+    line-height: 1.45;
+    color: #222;
+  }
+
+  /* Responsive */
+  @media (max-width: 860px){
+    .about-grid{ grid-template-columns: 1fr; }
+  }
+</style>
+
+<div class="about-wrap">
+
+  <div class="about-grid">
+
+    <!-- Left: About Me -->
+    <div class="about-card">
+      <h2 class="about-title">About Me</h2>
+
+      <p class="about-sub" id="aboutText">
+        I finished my PhD from
+        <a href="https://www.cis.rit.edu/" target="_blank">Chester F. Carlson Center for Imaging Science</a>
+        at Rochester Institute of Technology (RIT), Rochester, NY under the direction of my advisor,
+        <a href="https://www.rit.edu/directory/calbme-cristian-linte" target="_blank">Dr. Cristian Linte</a>,
+        funded by <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1808530&HistoricalAwards=false" target="_blank">NSF</a>
+        and NIH grants.
+        My PhD thesis focused on <span data-tag="Segmentation">deep learning architectures for segmentation</span> in medical imaging.
+        I worked at <span data-tag="Detection">Philips Research</span> designing an optimized
+        <span data-tag="Detection">object detection</span> framework for COVID-19 lung ultrasound,
+        and at <span data-tag="Optimization">IBM Research</span> on deep neural network
+        <span data-tag="Optimization">pruning/optimization</span> for explainable AI.
+      </p>
+
+      <!-- Clickable “focus” pills -->
+      <div class="pill-row" aria-label="Interactive focus tags">
+        <span class="pill" data-focus="Segmentation">Segmentation</span>
+        <span class="pill" data-focus="Detection">Detection</span>
+        <span class="pill" data-focus="Optimization">Optimization</span>
+        <span class="pill" data-focus="GenAI">GenAI</span>
+        <span class="pill" data-focus="Uncertainty">Uncertainty</span>
+      </div>
+
+      <details class="about-details">
+        <summary>Read thesis theme in one line</summary>
+        <p class="about-sub" style="margin-top:10px;">
+          From fully-supervised single-task learning to semi-supervised multi-task deep learning for robust clinical segmentation.
+        </p>
+      </details>
+    </div>
+
+    <!-- Right: Research Interests -->
+    <div class="about-card">
+      <h2 class="about-title">Research Interests</h2>
+      <ul class="mini-list" id="riList">
+        <li><span data-tag="Segmentation">Semantic &amp; instance segmentation</span> for medical imaging (2D/3D)</li>
+        <li><span data-tag="Registration">4D deformable registration</span> + motion estimation</li>
+        <li><span data-tag="Detection">Object detection</span> + representation learning</li>
+        <li><span data-tag="Uncertainty">Uncertainty / OOD estimation</span> + Bayesian methods</li>
+        <li><span data-tag="Inpainting">Video inpainting</span> + generative modeling</li>
+        <li><span data-tag="GenAI">LLM/GenAI workflows</span> for automation &amp; information retrieval</li>
+      </ul>
+
+      <details class="about-details" open>
+        <summary>What I enjoy building</summary>
+        <p class="about-sub" style="margin-top:10px;">
+          End-to-end systems: data → model → evaluation → deployment, with an emphasis on reliability and measurable impact.
+        </p>
+      </details>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  // --- Simple interactivity: click pills to highlight matching phrases ---
+  (function(){
+    const pills = document.querySelectorAll(".pill");
+    const targets = document.querySelectorAll("[data-tag]");
+    let active = null;
+
+    function clearHighlights(){
+      targets.forEach(el => {
+        el.classList.remove("hl");
+      });
+      pills.forEach(p => p.classList.remove("active"));
+    }
+
+    pills.forEach(pill => {
+      pill.addEventListener("click", () => {
+        const focus = pill.getAttribute("data-focus");
+
+        // toggle off if same
+        if(active === focus){
+          active = null;
+          clearHighlights();
+          return;
+        }
+
+        active = focus;
+        clearHighlights();
+        pill.classList.add("active");
+
+        targets.forEach(el => {
+          if(el.getAttribute("data-tag") === focus){
+            el.classList.add("hl");
+          }
+        });
+
+        // Auto-open the thesis details for context (nice touch)
+        const det = document.querySelector("details.about-details");
+        if(det && !det.open) det.open = true;
+      });
+    });
+  })();
+</script>
+<!-- ===== End section ===== -->
+						
 <h2 style="color: black;">News</h2>
 
 <ul>	  <li> <a style="font-family:sans-serif" style="color:blue;">[Jan 2024]</a>  Promoted as Senior AI Scientist</li>

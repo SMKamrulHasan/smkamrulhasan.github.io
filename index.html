@@ -132,39 +132,6 @@ ga('send', 'pageview');
 
   </div>
 
-<!-- Typing script -->
-<script type="text/javascript">
-//<![CDATA[
-(function () {
-  var text = "Let’s dive into my research";
-  var speed = 60;
-  var i = 0;
-
-  function type() {
-    var el = document.getElementById("typing-text");
-    if (!el) return;
-
-    if (i < text.length) {
-      el.appendChild(document.createTextNode(text.charAt(i)));
-      i++;
-      window.setTimeout(type, speed);
-    }
-  }
-
-  if (document.addEventListener) {
-    document.addEventListener("DOMContentLoaded", function () {
-      window.setTimeout(type, 300);
-    }, false);
-  } else {
-    window.attachEvent("onload", function () {
-      window.setTimeout(type, 300);
-    });
-  }
-})();
-//]]>
-</script>
-
-
 
 <head>
   <link rel="shortcut icon" href="myIcon.ico">
@@ -214,7 +181,38 @@ ga('send', 'pageview');
   <!-- End Google Analytics -->
 </head>
 
-						
+
+<!-- Typing script -->
+<script type="text/javascript">
+//<![CDATA[
+(function () {
+  var text = "Let’s dive into my research";
+  var speed = 60;
+  var i = 0;
+
+  function type() {
+    var el = document.getElementById("typing-text");
+    if (!el) return;
+
+    if (i < text.length) {
+      el.appendChild(document.createTextNode(text.charAt(i)));
+      i++;
+      window.setTimeout(type, speed);
+    }
+  }
+
+  if (document.addEventListener) {
+    document.addEventListener("DOMContentLoaded", function () {
+      window.setTimeout(type, 300);
+    }, false);
+  } else {
+    window.attachEvent("onload", function () {
+      window.setTimeout(type, 300);
+    });
+  }
+})();
+//]]>
+</script>
 						
 <!--<h2>Biography [<a href="./CV-JinYueming.pdf">CV</a>]</h2>-->
 <!-- <h2 style="color: black;">About Me</h2>

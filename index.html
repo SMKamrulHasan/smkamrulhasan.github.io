@@ -447,119 +447,174 @@ ga('send', 'pageview');
 <!-- ===== End section ===== -->
 
 
-<!-- ===== Recent AI Contributions + Selected Contributions ===== -->
+<!-- ===== Recent AI Contributions + Selected Contributions (Interactive) ===== -->
 <style>
-  .contrib-wrap{
-    margin: 10px 0 30px 0;
-  }
+  /* Reuse your existing card look; only adds the interactive bits */
+  .contrib-wrap{ margin: 0 0 30px 0; }
+
   .contrib-grid{
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 18px;
     align-items: start;
   }
-  .contrib-card{
-    border: 1px solid #e6e6e6;
-    border-radius: 14px;
-    padding: 16px 16px 14px 16px;
-    background: #fff;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.04);
-  }
-  .contrib-title{
-    margin: 0 0 8px 0;
-    font-size: 28px;
-    font-weight: 800;
-    letter-spacing: -0.2px;
-    color: #111;
-  }
-  .contrib-sub{
-    margin: 0 0 12px 0;
-    font-size: 15px;
-    color: #444;
-    line-height: 1.55;
-  }
-  .contrib-list{
-    margin: 0;
-    padding-left: 18px;
-  }
-  .contrib-list li{
-    margin: 10px 0;
-    line-height: 1.5;
-    color: #111;
-  }
-
-  /* “soft highlight” callouts */
-  .callout{
-    margin-top: 12px;
-    padding: 12px 12px;
-    border-radius: 12px;
-    border: 1px dashed #e6e6e6;
-    background: rgba(253,108,108,0.06);
-  }
-  .callout b{ color:#111; }
-  .muted{ color:#666; }
-
-  /* emoji headline */
-  .mini-head{
-    font-size: 16px;
-    font-weight: 800;
-    margin: 0 0 10px 0;
-    color: #111;
-  }
-
   @media (max-width: 860px){
     .contrib-grid{ grid-template-columns: 1fr; }
+  }
+
+  /* Make pills consistent with your About section */
+  .contrib-pills{ margin: 10px 0 0 0; }
+  .contrib-pill{
+    display: inline-block;
+    padding: 6px 12px;
+    margin: 6px 8px 0 0;
+    border-radius: 999px;
+    border: 1px solid #ddd;
+    background: #f7f7f7;
+    font-size: 13px;
+    color: #222;
+    cursor: pointer;
+    user-select: none;
+    transition: transform 120ms ease, background 120ms ease, border 120ms ease;
+  }
+  .contrib-pill:hover{ transform: translateY(-1px); }
+  .contrib-pill.active{
+    background: #111;
+    color: #fff;
+    border-color: #111;
+  }
+
+  /* highlight effect */
+  .contrib-hl{
+    padding: 0 4px;
+    border-radius: 6px;
+    background: rgba(37, 99, 235, 0.16); /* soft blue */
+  }
+
+  /* optional: small “hint” line */
+  .contrib-hint{
+    margin-top: 10px;
+    font-size: 13px;
+    color: #666;
   }
 </style>
 
 <div class="contrib-wrap">
+
+  <!-- Pills row (place it exactly where you want: above the two cards, or below) -->
+  <div class="contrib-pills" aria-label="Interactive contribution filters">
+    <span class="contrib-pill" data-focus="Segmentation">Segmentation</span>
+    <span class="contrib-pill" data-focus="Detection">Detection</span>
+    <span class="contrib-pill" data-focus="Optimization">Optimization</span>
+    <span class="contrib-pill" data-focus="GenAI">GenAI</span>
+    <span class="contrib-pill" data-focus="Uncertainty">Uncertainty</span>
+    <span class="contrib-pill" data-focus="Systems">Systems</span>
+  </div>
+  <div class="contrib-hint">Tip: click a pill to highlight related items across both panels.</div>
+
   <div class="contrib-grid">
 
-    <!-- Left: Recent AI Contributions -->
-    <div class="contrib-card">
-      <h2 class="contrib-title">Recent AI Contributions</h2>
-      <ul class="contrib-list">
+    <!-- Left card: Recent AI Contributions (use your existing .about-card style if you want) -->
+    <div class="about-card">
+      <h2 class="about-title">Recent AI Contributions</h2>
+
+      <ul class="mini-list" style="margin-top: 6px;">
         <li>
-          <b>Vision Transformers for Lung Cancer Detection</b> — Developed and deployed transformer-based imaging models at J&amp;J to improve lung cancer detection performance and streamline clinical decision workflows.
+          <b><span data-tag="Detection">Vision Transformers</span> for Lung Cancer Detection</b> —
+          Developed and deployed transformer-based imaging models at J&amp;J to improve lung cancer detection performance and streamline clinical decision workflows.
+          <span data-tag="Systems" style="display:none;"></span>
         </li>
+
         <li>
-          <b>LLM-powered Drug Discovery Insights</b> — Built NLP pipelines (BERT/GPT-style) to analyze multi-channel biomedical text and signals, improving discovery of high-signal insights for downstream decision-making.
+          <b><span data-tag="GenAI">LLM-powered</span> Drug Discovery Insights</b> —
+          Built NLP pipelines (BERT/GPT-style) to analyze multi-channel biomedical text and signals, improving discovery of high-signal insights for downstream decision-making.
         </li>
       </ul>
 
-      <div class="callout">
-        <b>What I optimize for:</b>
-        <span class="muted">reliability, measurable lift, and deployability (not just prototypes).</span>
+      <div style="margin-top: 14px; padding: 12px 14px; border: 1px dashed #e6e6e6; border-radius: 12px; background: #fff7f7;">
+        <b>What I optimize for:</b> reliability, measurable lift, and deployability (not just prototypes).
+        <span data-tag="Systems"></span>
+        <span data-tag="Optimization"></span>
       </div>
     </div>
 
-    <!-- Right: Selected Contributions -->
-    <div class="contrib-card">
-      <h2 class="contrib-title">Selected Contributions</h2>
+    <!-- Right card: Selected Contributions -->
+    <div class="about-card">
+      <h2 class="about-title">Selected Contributions</h2>
 
-      <div class="mini-head">🎓 STAMP</div>
-      <p class="contrib-sub">
-        Developed a self-training student–teacher framework for precise medical image segmentation.
-        <span class="muted">Conceptually aligned with modern self-training / distillation patterns in current reasoning and alignment-era models.</span>
-      </p>
+      <div style="margin-top: 8px;">
+        <div style="font-weight:800; font-size:18px; margin: 0 0 6px 0;">
+          🎓 <span data-tag="Segmentation">STAMP</span>
+        </div>
+        <div class="about-sub" style="margin:0 0 14px 0;">
+          Developed a self-training student–teacher framework for precise medical image segmentation.
+        </div>
 
-      <div class="mini-head">🧠 CondenseUNet</div>
-      <p class="contrib-sub">
-        Engineered model compression, pruning, and distillation methods to reduce model footprint while preserving clinical-grade performance.
-        <span class="muted">Designed for efficient inference under real deployment constraints.</span>
-      </p>
+        <div style="font-weight:800; font-size:18px; margin: 0 0 6px 0;">
+          🧠 <span data-tag="Optimization">CondenseUNet</span>
+        </div>
+        <div class="about-sub" style="margin:0 0 14px 0;">
+          Engineered compression, pruning, and distillation methods to reduce model footprint while preserving clinical-grade performance.
+        </div>
 
-      <div class="mini-head">✨ Surgical Occlusion Inpainting</div>
-      <p class="contrib-sub" style="margin-bottom:0;">
-        Built vision-based inpainting to remove laparoscopic tool occlusions from surgical video sequences.
-        <span class="muted">An early example of content-aware removal ideas later popularized in consumer imaging.</span>
-      </p>
+        <div style="font-weight:800; font-size:18px; margin: 0 0 6px 0;">
+          ✨ <span data-tag="Detection">Surgical Occlusion Inpainting</span>
+        </div>
+        <div class="about-sub" style="margin:0;">
+          Built vision-based inpainting to remove laparoscopic tool occlusions from surgical video sequences.
+        </div>
+
+        <!-- Optional invisible tag hooks -->
+        <span data-tag="Systems" style="display:none;"></span>
+      </div>
     </div>
 
   </div>
 </div>
-<!-- ===== End Recent AI Contributions ===== -->
 
+<script>
+  // --- Interactive highlighting for Contributions ---
+  (function(){
+    var pills = document.querySelectorAll(".contrib-pill");
+    var targets = document.querySelectorAll(".contrib-wrap [data-tag]");
+    var active = null;
+
+    function clearAll(){
+      for (var i=0; i<targets.length; i++){
+        targets[i].classList.remove("contrib-hl");
+      }
+      for (var j=0; j<pills.length; j++){
+        pills[j].classList.remove("active");
+      }
+    }
+
+    for (var k=0; k<pills.length; k++){
+      (function(pill){
+        pill.addEventListener("click", function(){
+          var focus = pill.getAttribute("data-focus");
+
+          // toggle off
+          if (active === focus){
+            active = null;
+            clearAll();
+            return;
+          }
+
+          active = focus;
+          clearAll();
+          pill.classList.add("active");
+
+          for (var t=0; t<targets.length; t++){
+            if (targets[t].getAttribute("data-tag") === focus){
+              targets[t].classList.add("contrib-hl");
+            }
+          }
+        });
+      })(pills[k]);
+    }
+  })();
+</script>
+<!-- ===== End Contributions section ===== -->
 
 
 				

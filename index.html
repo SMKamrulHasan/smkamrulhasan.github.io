@@ -9,6 +9,27 @@
 <meta name="description" content="S. M. Kamrul Hasan&#39;s home page">
 <meta name="google-site-verification" content="X2QFrl-bPeg9AdlMt4VKT9v6MJUSTCf-SrY3CvKt4Zs" />
 <link rel="stylesheet" href="jemdoc.css" type="text/css">
+
+<style type="text/css">
+  .typing-container{
+    font-size: 34px;
+    font-weight: 500;
+    color: #2563eb;
+    margin-bottom: 14px;
+  }
+
+  .cursor{
+    animation: blink 1s infinite;
+  }
+
+  @keyframes blink{
+    0%,50%,100%{opacity:1;}
+    25%,75%{opacity:0;}
+  }
+</style>
+
+
+	
 <head>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
   <style>
@@ -52,7 +73,9 @@ ga('send', 'pageview');
 			<td width="650">
 				<div id="toptitle">	 				
 					<h1 style="color: black">S. M. Kamrul Hasan, PhD </h1><h1>
-				
+						<div class="typing-container">
+  							<span id="typing-text"></span><span class="cursor">|</span>
+						</div>
 				<h3 style="color: black"></h3>
 				<p style="./data/font-awesome.min.css;padding-bottom:30px" >
 					Senior AI Scientist<br>
@@ -86,36 +109,38 @@ ga('send', 'pageview');
 
   </div>
 
-  <!-- Typing script -->
-  <script type="text/javascript">
-  (function () {
-    var text = "Let\u2019s dive into my research";
-    var speed = 60;
-    var i = 0;
+<!-- Typing script -->
+<script type="text/javascript">
+//<![CDATA[
+(function () {
+  var text = "Let’s dive into my research";
+  var speed = 60;
+  var i = 0;
 
-    function type() {
-      var el = document.getElementById("typing-text");
-      if (!el) return;
-      if (i < text.length) {
-        el.appendChild(document.createTextNode(text.charAt(i)));
-        i++;
-        window.setTimeout(type, speed);
-      }
-    }
+  function type() {
+    var el = document.getElementById("typing-text");
+    if (!el) return;
 
-    if (document.addEventListener) {
-      document.addEventListener("DOMContentLoaded", function () {
-        window.setTimeout(type, 350);
-      }, false);
-    } else {
-      window.attachEvent("onload", function () {
-        window.setTimeout(type, 350);
-      });
+    if (i < text.length) {
+      el.appendChild(document.createTextNode(text.charAt(i)));
+      i++;
+      window.setTimeout(type, speed);
     }
-  })();
-  </script>
-</body>
-</html>
+  }
+
+  if (document.addEventListener) {
+    document.addEventListener("DOMContentLoaded", function () {
+      window.setTimeout(type, 300);
+    }, false);
+  } else {
+    window.attachEvent("onload", function () {
+      window.setTimeout(type, 300);
+    });
+  }
+})();
+//]]>
+</script>
+
 
 
 <head>

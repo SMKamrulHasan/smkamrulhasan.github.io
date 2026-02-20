@@ -6,21 +6,18 @@
 
   <title>S M Kamrul Hasan – Senior AI Scientist at Johnson & Johnson</title>
 
-  <meta name="description" content="S M Kamrul Hasan is a Senior AI Scientist at Johnson & Johnson, specializing in computer vision, medical imaging, and AI/ML. PhD in Imaging Science (RIT).">
-  <meta name="keywords" content="S M Kamrul Hasan, Kamrul Hasan, computer vision, medical imaging, AI, Johnson & Johnson, RIT">
-
+  <meta name="description" content="S M Kamrul Hasan is a Senior AI Scientist at Johnson & Johnson, working on computer vision, medical imaging, and AI/ML. PhD in Imaging Science (RIT).">
   <link rel="canonical" href="https://smkamrulhasan.github.io/">
   <link rel="icon" href="myIcon.ico">
 
   <meta name="google-site-verification" content="X2QFrl-bPeg9AdlMt4VKT9v6MJUSTCf-SrY3CvKt4Zs">
 
-  <!-- Social previews (also helps Google sometimes) -->
+  <!-- Social preview -->
   <meta property="og:title" content="S M Kamrul Hasan – Senior AI Scientist at Johnson & Johnson">
   <meta property="og:description" content="Computer vision, medical imaging, and AI/ML. PhD in Imaging Science (RIT).">
   <meta property="og:url" content="https://smkamrulhasan.github.io/">
   <meta property="og:type" content="website">
 
-  <!-- CSS -->
   <link rel="stylesheet" href="jemdoc.css" type="text/css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
 
@@ -41,9 +38,85 @@
       animation: blink 1s infinite;
     }
     @keyframes blink { 0%,50%,100%{opacity:1} 25%,75%{opacity:0} }
+
+    /* ===== About + Research Interests ===== */
+    .about-wrap{ margin: 10px 0 30px 0; }
+    .about-grid{
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 18px;
+      align-items: start;
+    }
+    .about-card{
+      border: 1px solid #e6e6e6;
+      border-radius: 14px;
+      padding: 16px 16px 14px 16px;
+      background: #fff;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+    }
+    .about-title{
+      margin: 0 0 8px 0;
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.2px;
+      color: #111;
+    }
+    .about-sub{
+      margin: 0 0 14px 0;
+      font-size: 15px;
+      color: #444;
+      line-height: 1.55;
+    }
+    .about-sub a{ text-decoration: none; }
+    .about-sub a:hover{ text-decoration: underline; }
+
+    .pill-row{ margin: 10px 0 0 0; }
+    .pill{
+      display: inline-block;
+      padding: 6px 12px;
+      margin: 6px 8px 0 0;
+      border-radius: 999px;
+      border: 1px solid #ddd;
+      background: #f7f7f7;
+      font-size: 13px;
+      color: #222;
+      cursor: pointer;
+      user-select: none;
+      transition: transform 120ms ease, background 120ms ease, border 120ms ease;
+    }
+    .pill:hover{ transform: translateY(-1px); }
+    .pill.active{ background: #111; color: #fff; border-color: #111; }
+
+    .hl{
+      padding: 0 4px;
+      border-radius: 6px;
+      background: rgba(253, 108, 108, 0.22);
+    }
+
+    details.about-details{
+      margin-top: 12px;
+      border-top: 1px dashed #e6e6e6;
+      padding-top: 10px;
+    }
+    details.about-details summary{
+      cursor: pointer;
+      font-weight: 700;
+      color: #111;
+      list-style: none;
+    }
+    details.about-details summary::-webkit-details-marker{ display: none; }
+    details.about-details summary:before{ content: "➕ "; font-weight: 700; }
+    details.about-details[open] summary:before{ content: "➖ "; }
+
+    .mini-list{ margin: 0; padding-left: 18px; }
+    .mini-list li{ margin: 8px 0; line-height: 1.45; color: #222; }
+
+    @media (max-width: 860px){
+      .about-grid{ grid-template-columns: 1fr; }
+    }
   </style>
 
-  <!-- Structured data (strong signal for identity + job title) -->
+  <!-- Structured data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -60,7 +133,7 @@
   }
   </script>
 
-  <!-- Google Analytics (keep if you want; UA is legacy but harmless) -->
+  <!-- Google Analytics (optional) -->
   <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -74,103 +147,127 @@
 <body>
 
 <div id="layout-content" style="margin-top:25px">
- <a href="https://github.com/SMKamrulHasan" class="github-corner"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#FD6C6C; color:#fff; position: absolute; top: 0; border: 0; right: 0;"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
 
-<table>
-	<tbody>
-		<tr>
-			<td width="650">
-				<div id="toptitle">	 				
-					<h1 style="color: black">S M Kamrul Hasan</h1>
-						<div class="typing-container">
-  							<span id="typing-text"></span><span class="cursor">|</span>
-						</div>
-				<h3 style="color: black"></h3>
-				<p style="./data/font-awesome.min.css;padding-bottom:30px" >
-					Senior AI Scientist<br>
-					Johnson & Johnson<br>
-					<br>
-					Email: sh3190@rit.edu<br>
-					Previous:  <a target="_blank" href="https://www.philips.com/a-w/about/innovation/innovation-hubs/cambridge.html">Philips Research</a>; <a target="_blank" href="http://www.research.ibm.com/" target="_blank">IBM Research</a> <br>
-
-		    			[<a target="_blank" href="data/SMKamrul_Hasan_Resume_singlePage.pdf"> CV </a>] [<a target="_blank" href="https://scholar.google.com/citations?user=M7XmUK0AAAAJ&hl=en">Google Scholar</a>]
-					
-	
-				</p>
-				<p> <!--<a href="https://scholar.google.com/citations?user=bRe3FlcAAAAJ&hl=en"><img src="./pic/google_scholar.png" height="30px" style="margin-bottom:-3px"></a>--> 
-					<a href="https://scholar.google.com/citations?user=M7XmUK0AAAAJ&hl=en#"><img src="./images/gs-logo.png" height="30px" style="margin-bottom:-3px"></a>
-					<a href="https://github.com/SMKamrulHasan"><img src="./pic/github_s.jpg" height="30px" style="margin-bottom:-3px"></a>
-					<a href="https://www.researchgate.net/profile/S_M_Kamrul_Hasan7"><img src="./pic/rg.png" height="30px" style="margin-bottom:-3px"></a>
-					<a href="https://www.linkedin.com/in/s-m-kamrul-hasan/"><img src="./images/linkedin-logo.png" height="30px" style="margin-bottom:-3px"></a>
-					<!--
-					<a href="https://www.linkedin.com/in/lequan-yu-124811a2"><img src="./pic/LinkedIn_s.png" height="30px" style="margin-bottom:-3px"></a>
-					<a href="https://zh-cn.facebook.com/people/Lequan-Yu/100003696557697"><img src="./pic/Facebook_s.png" height="30px" style="margin-bottom:-3px"></a>
-					-->
-				</p>
-			</td>
-			<td>
-				<img src="./pic/git_image.jpg" border="0" width="260"><br>
-			</td>
-		</tr><tr>
-	</tr></tbody>
-</table>
-
-
-  </div>
-
-
-<head>
-  <link rel="shortcut icon" href="myIcon.ico">
-  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-
-  <meta name="keywords" content="S. M. Kamrul Hasan, S. M. Kamrul Hasan, Center for Imaging Science, RIT"> 
-  <meta name="description" content="S. M. Kamrul Hasan&#39;s home page">
-  <meta name="google-site-verification" content="X2QFrl-bPeg9AdlMt4VKT9v6MJUSTCf-SrY3CvKt4Zs" />
-
-  <link rel="stylesheet" href="jemdoc.css" type="text/css">
-
-  <!-- Optional font (keep Inter if you like) -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+  <a href="https://github.com/SMKamrulHasan" class="github-corner" aria-label="GitHub profile">
+    <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#FD6C6C; color:#fff; position:absolute; top:0; right:0; border:0;">
+      <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+      <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+            fill="currentColor" style="transform-origin:130px 106px;" class="octo-arm"></path>
+      <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+            fill="currentColor" class="octo-body"></path>
+    </svg>
+  </a>
 
   <style>
-    body { font-family: Inter, "Segoe UI", Arial, sans-serif; }
-
-    /* --- Typing header --- */
-    .typing-container{
-      font-size: 34px;
-      font-weight: 500;
-      color: #2563eb;
-      margin: 0 0 10px 0;
-      letter-spacing: 0.2px;
-      line-height: 1.2;
-    }
-    .cursor{
-      display:inline-block;
-      margin-left: 2px;
-      animation: blink 1s infinite;
-    }
-    @keyframes blink { 0%,50%,100%{opacity:1} 25%,75%{opacity:0} }
+    .github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}
+    @keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}
+    @media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}
   </style>
 
-  <title>S. M. Kamrul Hasan&#39;s Homepage</title>
+  <table>
+    <tbody>
+      <tr>
+        <td width="650">
+          <div id="toptitle">
+            <h1 style="color:black;">S M Kamrul Hasan</h1>
 
-  <!-- Google Analytics -->
-  <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+            <div class="typing-container">
+              <span id="typing-text"></span><span class="cursor">|</span>
+            </div>
 
-  ga('create', 'UA-159069803-1', 'auto');
-  ga('send', 'pageview');
-  </script>
-  <!-- End Google Analytics -->
-</head>
+            <p style="padding-bottom:30px;">
+              Senior AI Scientist<br>
+              Johnson &amp; Johnson<br><br>
+              Email: sh3190@rit.edu<br>
+              Previous:
+              <a target="_blank" href="https://www.philips.com/a-w/about/innovation/innovation-hubs/cambridge.html" rel="noopener">Philips Research</a>;
+              <a target="_blank" href="http://www.research.ibm.com/" rel="noopener">IBM Research</a><br>
+              [<a target="_blank" href="data/SMKamrul_Hasan_Resume_singlePage.pdf" rel="noopener">CV</a>]
+              [<a target="_blank" href="https://scholar.google.com/citations?user=M7XmUK0AAAAJ&hl=en" rel="noopener">Google Scholar</a>]
+            </p>
 
+            <p>
+              <a href="https://scholar.google.com/citations?user=M7XmUK0AAAAJ&hl=en" rel="noopener">
+                <img src="./images/gs-logo.png" height="30" style="margin-bottom:-3px" alt="Google Scholar">
+              </a>
+              <a href="https://github.com/SMKamrulHasan" rel="noopener">
+                <img src="./pic/github_s.jpg" height="30" style="margin-bottom:-3px" alt="GitHub">
+              </a>
+              <a href="https://www.researchgate.net/profile/S_M_Kamrul_Hasan7" rel="noopener">
+                <img src="./pic/rg.png" height="30" style="margin-bottom:-3px" alt="ResearchGate">
+              </a>
+              <a href="https://www.linkedin.com/in/s-m-kamrul-hasan/" rel="noopener">
+                <img src="./images/linkedin-logo.png" height="30" style="margin-bottom:-3px" alt="LinkedIn">
+              </a>
+            </p>
+          </div>
+        </td>
+        <td>
+          <img src="./pic/git_image.jpg" border="0" width="260" alt="S M Kamrul Hasan"><br>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- ===== About + Research Interests ===== -->
+  <div class="about-wrap">
+    <div class="about-grid">
+
+      <div class="about-card">
+        <h2 class="about-title">About Me</h2>
+
+        <p class="about-sub" id="aboutText">
+          I’m a Senior AI Scientist at Johnson &amp; Johnson working on computer vision, medical imaging, and AI/ML.
+          I earned my PhD from
+          <a href="https://www.cis.rit.edu/" target="_blank" rel="noopener">Chester F. Carlson Center for Imaging Science</a>
+          at Rochester Institute of Technology (RIT) under
+          <a href="https://www.rit.edu/directory/calbme-cristian-linte" target="_blank" rel="noopener">Dr. Cristian Linte</a>.
+          My research has focused on <span data-tag="Segmentation">segmentation</span>, <span data-tag="Detection">detection</span>,
+          and <span data-tag="Optimization">model optimization</span> in real-world imaging systems.
+        </p>
+
+        <div class="pill-row" aria-label="Interactive focus tags">
+          <span class="pill" data-focus="Segmentation">Segmentation</span>
+          <span class="pill" data-focus="Detection">Detection</span>
+          <span class="pill" data-focus="Optimization">Optimization</span>
+          <span class="pill" data-focus="GenAI">GenAI</span>
+          <span class="pill" data-focus="Uncertainty">Uncertainty</span>
+        </div>
+
+        <details class="about-details">
+          <summary>Thesis (one line)</summary>
+          <p class="about-sub" style="margin-top:10px;">
+            Semi-supervised multi-task deep learning for robust clinical segmentation.
+          </p>
+        </details>
+      </div>
+
+      <div class="about-card">
+        <h2 class="about-title">Research Interests</h2>
+        <ul class="mini-list" id="riList">
+          <li><span data-tag="Segmentation">Semantic &amp; instance segmentation</span> (2D/3D medical imaging)</li>
+          <li><span data-tag="Registration">4D deformable registration</span> + motion estimation</li>
+          <li><span data-tag="Detection">Object detection</span> + representation learning</li>
+          <li><span data-tag="Uncertainty">Uncertainty / OOD estimation</span> + Bayesian methods</li>
+          <li><span data-tag="Inpainting">Video inpainting</span> + generative modeling</li>
+          <li><span data-tag="GenAI">LLM/GenAI workflows</span> for automation &amp; information retrieval</li>
+        </ul>
+
+        <details class="about-details" open>
+          <summary>What I enjoy building</summary>
+          <p class="about-sub" style="margin-top:10px;">
+            End-to-end systems: data → model → evaluation → deployment, with reliability and measurable impact.
+          </p>
+        </details>
+      </div>
+
+    </div>
+  </div>
+
+</div>
 
 <!-- Typing script -->
-<script type="text/javascript">
-//<![CDATA[
+<script>
 (function () {
   var text = "Let’s dive into my research";
   var speed = 60;
@@ -179,7 +276,6 @@
   function type() {
     var el = document.getElementById("typing-text");
     if (!el) return;
-
     if (i < text.length) {
       el.appendChild(document.createTextNode(text.charAt(i)));
       i++;
@@ -190,247 +286,49 @@
   if (document.addEventListener) {
     document.addEventListener("DOMContentLoaded", function () {
       window.setTimeout(type, 300);
-    }, false);
+    });
   } else {
     window.attachEvent("onload", function () {
       window.setTimeout(type, 300);
     });
   }
 })();
-//]]>
 </script>
-						
-<!--<h2>Biography [<a href="./CV-JinYueming.pdf">CV</a>]</h2>-->
-<!-- <h2 style="color: black;">About Me</h2>
-<p style="padding-bottom:30px;text-align:justify; font-family:Aptos, Arial, sans-serif;">
-
-	I’m a Senior AI Scientist at Johnson & Johnson. I have 8+ years of experience designing and deploying scalable, high-impact AI solutions in computer vision, multi-modal learning, and foundation models. I specialize in self-supervised learning, model compression, and multi-modal AI, driving state-of-the-art advancements in medical imaging and AI-powered drug discovery. I finished my PhD from <a href="https://www.cis.rit.edu/" > Chester F. Carlson Center for Imaging Science</a> at Rochester Institute of Technology (RIT), Rochester, NY under the direction of my advisor, <a href="https://www.rit.edu/directory/calbme-cristian-linte" >Dr. Cristian Linte</a> and funded by both <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1808530&HistoricalAwards=false" >NSF</a> and NIH grants. My PhD Thesis was titled “From Fully-Supervised Single-Task to Semi-Supervised Multi-Task Deep Learning Architectures for Segmentation in Medical Imaging Applications”. I worked as an AI Research Intern at Philips Research in Cambridge, Massachusetts where I designed an extremely optimized object detection framework for object detection of COVID-19 features in ultrasound images (Ultrasound scans of the lung image) captured by Lumify portable Ultrasound probe. I worked for IBM Research in California as a Machine Learning Research Intern, where I've worked on deep neural network pruning/optimization for better explainable AI.
-	</p>	
-<h2 style="color: black;">Research Interests </h2>
-<p style="padding-bottom:30px;text-align:justify" style="font-family:sans-serif">My research focuses broadly on developing and optimizing machine learning models for analyzing multi-modal images to enable more accurate automatic semantic and instance segmentation, 4D deformable registration, object detection, video object motion estimation, out-of-distribution (uncertainty) estimation, as well as video inpainting. I have profound knowledge of optimized label-efficient machine learning-based imaging problems. I have strong hands-on expertise in semi-/self-/un-supervised learning, representation learning, deep generative models, probabilistic Bayesian Monte Carlo models, and posterior estimation models.
-	 -->
-
-<!-- ===== About + Research Interests (Modern + Interactive) ===== -->
-<style>
-  .about-wrap{
-    font-family: Aptos, Arial, sans-serif;
-    margin: 10px 0 30px 0;
-  }
-
-  .about-grid{
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 18px;
-    align-items: start;
-  }
-
-  /* Card */
-  .about-card{
-    border: 1px solid #e6e6e6;
-    border-radius: 14px;
-    padding: 16px 16px 14px 16px;
-    background: #fff;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.04);
-  }
-
-  .about-title{
-    margin: 0 0 8px 0;
-    font-size: 28px;
-    font-weight: 800;
-    letter-spacing: -0.2px;
-    color: #111;
-  }
-
-  .about-sub{
-    margin: 0 0 14px 0;
-    font-size: 15px;
-    color: #444;
-    line-height: 1.55;
-  }
-
-  .about-sub a{ text-decoration: none; }
-  .about-sub a:hover{ text-decoration: underline; }
-
-  /* Pills */
-  .pill-row{ margin: 10px 0 0 0; }
-  .pill{
-    display: inline-block;
-    padding: 6px 12px;
-    margin: 6px 8px 0 0;
-    border-radius: 999px;
-    border: 1px solid #ddd;
-    background: #f7f7f7;
-    font-size: 13px;
-    color: #222;
-    cursor: pointer;
-    user-select: none;
-    transition: transform 120ms ease, background 120ms ease, border 120ms ease;
-  }
-  .pill:hover{ transform: translateY(-1px); }
-  .pill.active{
-    background: #111;
-    color: #fff;
-    border-color: #111;
-  }
-
-  /* Highlights inside text when pills active */
-  .hl{
-    padding: 0 4px;
-    border-radius: 6px;
-    background: rgba(253, 108, 108, 0.22); /* your coral-ish theme */
-  }
-
-  /* Details (expand/collapse) */
-  details.about-details{
-    margin-top: 12px;
-    border-top: 1px dashed #e6e6e6;
-    padding-top: 10px;
-  }
-  details.about-details summary{
-    cursor: pointer;
-    font-weight: 700;
-    color: #111;
-    list-style: none;
-  }
-  details.about-details summary::-webkit-details-marker{ display: none; }
-  details.about-details summary:before{
-    content: "➕ ";
-    font-weight: 700;
-  }
-  details.about-details[open] summary:before{
-    content: "➖ ";
-  }
-
-  /* Right column “Profile” */
-  .mini-title{
-    font-size: 16px;
-    font-weight: 800;
-    margin: 0 0 10px 0;
-    color: #111;
-  }
-  .mini-list{
-    margin: 0;
-    padding-left: 18px;
-  }
-  .mini-list li{
-    margin: 8px 0;
-    line-height: 1.45;
-    color: #222;
-  }
-
-  /* Responsive */
-  @media (max-width: 860px){
-    .about-grid{ grid-template-columns: 1fr; }
-  }
-</style>
-
-<div class="about-wrap">
-
-  <div class="about-grid">
-
-    <!-- Left: About Me -->
-    <div class="about-card">
-      <h2 class="about-title">About Me</h2>
-
-      <p class="about-sub" id="aboutText">
-        I’m a Senior AI Scientist at Johnson & Johnson. I have 8+ years of experience designing and deploying scalable, 
-		high-impact AI solutions in computer vision, multi-modal learning, and foundation models. I specialize in self-supervised learning, 
-		model compression, and multi-modal AI, driving state-of-the-art advancements in medical imaging and AI-powered drug discovery.
-		  I finished my PhD from
-        <a href="https://www.cis.rit.edu/" target="_blank">Chester F. Carlson Center for Imaging Science</a>
-        at Rochester Institute of Technology (RIT), Rochester, NY under the direction of my advisor,
-        <a href="https://www.rit.edu/directory/calbme-cristian-linte" target="_blank">Dr. Cristian Linte</a>,
-        funded by <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1808530&HistoricalAwards=false" target="_blank">NSF</a>
-        and NIH grants.
-        My PhD thesis focused on <span data-tag="Segmentation">deep learning architectures for segmentation</span> in medical imaging.
-        I worked at <span data-tag="Detection">Philips Research</span> designing an optimized
-        <span data-tag="Detection">object detection</span> framework for COVID-19 lung ultrasound,
-        and at <span data-tag="Optimization">IBM Research</span> on deep neural network
-        <span data-tag="Optimization">pruning/optimization</span> for explainable AI.
-      </p>
-
-      <!-- Clickable “focus” pills -->
-      <div class="pill-row" aria-label="Interactive focus tags">
-        <span class="pill" data-focus="Segmentation">Segmentation</span>
-        <span class="pill" data-focus="Detection">Detection</span>
-        <span class="pill" data-focus="Optimization">Optimization</span>
-        <span class="pill" data-focus="GenAI">GenAI</span>
-        <span class="pill" data-focus="Uncertainty">Uncertainty</span>
-      </div>
-
-      <details class="about-details">
-        <summary>Read thesis theme in one line</summary>
-        <p class="about-sub" style="margin-top:10px;">
-          From fully-supervised single-task learning to semi-supervised multi-task deep learning for robust clinical segmentation.
-        </p>
-      </details>
-    </div>
-
-    <!-- Right: Research Interests -->
-    <div class="about-card">
-      <h2 class="about-title">Research Interests</h2>
-      <ul class="mini-list" id="riList">
-        <li><span data-tag="Segmentation">Semantic &amp; instance segmentation</span> for medical imaging (2D/3D)</li>
-        <li><span data-tag="Registration">4D deformable registration</span> + motion estimation</li>
-        <li><span data-tag="Detection">Object detection</span> + representation learning</li>
-        <li><span data-tag="Uncertainty">Uncertainty / OOD estimation</span> + Bayesian methods</li>
-        <li><span data-tag="Inpainting">Video inpainting</span> + generative modeling</li>
-        <li><span data-tag="GenAI">LLM/GenAI workflows</span> for automation &amp; information retrieval</li>
-      </ul>
-
-      <details class="about-details" open>
-        <summary>What I enjoy building</summary>
-        <p class="about-sub" style="margin-top:10px;">
-          End-to-end systems: data → model → evaluation → deployment, with an emphasis on reliability and measurable impact.
-        </p>
-      </details>
-    </div>
-
-  </div>
-</div>
 
 <script>
-  // --- Simple interactivity: click pills to highlight matching phrases ---
-  (function(){
-    const pills = document.querySelectorAll(".pill");
-    const targets = document.querySelectorAll("[data-tag]");
-    let active = null;
+(function(){
+  const pills = document.querySelectorAll(".pill");
+  const targets = document.querySelectorAll("[data-tag]");
+  let active = null;
 
-    function clearHighlights(){
-      targets.forEach(el => {
-        el.classList.remove("hl");
-      });
-      pills.forEach(p => p.classList.remove("active"));
-    }
+  function clearHighlights(){
+    targets.forEach(el => el.classList.remove("hl"));
+    pills.forEach(p => p.classList.remove("active"));
+  }
 
-    pills.forEach(pill => {
-      pill.addEventListener("click", () => {
-        const focus = pill.getAttribute("data-focus");
-
-        // toggle off if same
-        if(active === focus){
-          active = null;
-          clearHighlights();
-          return;
-        }
-
-        active = focus;
+  pills.forEach(pill => {
+    pill.addEventListener("click", () => {
+      const focus = pill.getAttribute("data-focus");
+      if(active === focus){
+        active = null;
         clearHighlights();
-        pill.classList.add("active");
-
-        targets.forEach(el => {
-          if(el.getAttribute("data-tag") === focus){
-            el.classList.add("hl");
-          }
-        });
-
-        // Auto-open the thesis details for context (nice touch)
-        const det = document.querySelector("details.about-details");
-        if(det && !det.open) det.open = true;
+        return;
+      }
+      active = focus;
+      clearHighlights();
+      pill.classList.add("active");
+      targets.forEach(el => {
+        if(el.getAttribute("data-tag") === focus){
+          el.classList.add("hl");
+        }
       });
     });
-  })();
+  });
+})();
 </script>
+
+</body>
+</html>
 <!-- ===== End section ===== -->
 
 
